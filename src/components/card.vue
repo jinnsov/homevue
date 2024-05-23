@@ -2,12 +2,13 @@
     <!-- Карточка товара -->
     <div class="card">
         <!-- Верхняя часть -->
+        <div class="card__description">{{description}}</div>
         <div class="card__top">
             <!-- Изображение-ссылка товара -->
             <a href="#" class="card__image">
                 <img :src="image" :alt="category" />
             </a>
-            <!-- Скидка на товар -->
+            <!-- Рэйтинг на товар -->
             <div class="card__label">{{rating.rate}}</div>
         </div>
         <!-- Нижняя часть -->
@@ -122,6 +123,12 @@ defineProps(
     font-weight: 400;
     font-size: 16px;
     color: #fff;
+}.card__description {
+    background: #ffffff;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #151414;
 }
 
 .card__bottom {

@@ -1,26 +1,10 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue';
-import { reactive } from "vue";
-import {goodsValues} from "./components/GoodsValues.js";
-import Card from "./components/card.vue";
-const items = reactive(goodsValues)
-console.log(items)
-
+import GreedCards from "./components/greedCards.vue";
 </script>
 
 <template>
-    <hello-world :msg="'Список товаров'"></hello-world>
-    <div v-for="item of items" key="id">
-<!--        <div>{{ item.id }}</div>-->
-        <div><card
-                :price = "item.price"
-                :title = "item.title"
-                :image = "item.image"
-                :rating = "item.rating"
-        ></card></div>
-
-    </div>
-  <HelloWorld msg="Vite + Vue" />
+  <greed-cards/>
+<!--  <HelloWorld msg="Vite + Vue" />-->
 </template>
 
 <style scoped>

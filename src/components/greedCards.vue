@@ -1,24 +1,23 @@
 <template>
-    <div v-for="item in items">
-        <div>{{ item['id'] }}</div>
-        <div><card/></div>
+        <div class="cards">
+            <div v-for="item of items" key="id">
+            <card
+                :price = "item.price"
+                :title = "item.title"
+                :image = "item.image"
+                :rating = "item.rating"
+                :description="item.description"
+            ></card>
+        </div>
     </div>
 
 </template>
 
 <script setup>
 import {reactive} from "vue";
-import card from "./card.vue";
-  const goods = []
-    fetch("https://fakestoreapi.com/products")
-    .then((response) => {
-        return response.json();
-    })
-    .then((data) => {
-        goods.push(... data);
-    });
-console.log(goods)
-const items = reactive(goods)
+import Card from "./card.vue";
+import {goodsValues} from "./GoodsValues.js";
+const items = reactive(goodsValues)
 </script>
 
 <style scoped>
@@ -27,7 +26,7 @@ const items = reactive(goods)
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: repeat(auto-fill, 225px);
     width: 100%;
-    max-width: 1000px; /* Ширина grid-контейнера */
+    max-width: 800px; /* Ширина grid-контейнера */
     justify-content: center;
     justify-items: center; /* Размещаем карточку по центру */
     column-gap: 30px; /* Отступ между колонками */
