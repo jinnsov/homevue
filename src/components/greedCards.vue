@@ -1,24 +1,13 @@
 <template>
-  <!-- Сетка карточек товаров -->
-        <!-- Карточка товара -->
-<!--    <div class="cards">
-        <div class="card"> <card/> </div>
-    </div>-->
     <div v-for="item in items">
         <div>{{ item['id'] }}</div>
-        <div>{{ item['title'] }}</div>
-        <div>{{ item['price'] }}</div>
-        <div>{{ item['description'] }}</div>
-        <div>{{ item['category'] }}</div>
-        <div>{{ item['image'] }}</div>
-        <div>{{ item['rating'].rate }}</div>
-        <div>{{ item['rating'].count }}</div>
+        <div><card/></div>
     </div>
-  }
+
 </template>
 
 <script setup>
-import {reactive, ref} from "vue";
+import {reactive} from "vue";
 import card from "./card.vue";
   const goods = []
     fetch("https://fakestoreapi.com/products")

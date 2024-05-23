@@ -14,10 +14,10 @@
         <!-- Нижняя часть -->
         <div class="card__bottom">
             <!-- Цены на товар (с учетом скидки и без)-->
-                <div>535 000</div>
+                <div>{{props.price}}</div>
             <!-- Ссылка-название товара -->
             <a href="#" class="card__title">
-                Смартфон Apple IPhone 14 Pro Max 256Gb, золотой
+                {{props.title}}
             </a>
             <!-- Кнопка добавить в корзину -->
             <button class="card__add">В корзину</button>
