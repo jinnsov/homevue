@@ -14,8 +14,15 @@ export default {
     components: {card}
 }
 import card from "./card.vue";
-let urlParams = new URLSearchParams("https://fakestoreapi.com/products")
-console.log(urlParams)
+const goods = []
+    fetch("https://fakestoreapi.com/products")
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        goods.push(... data);
+    });
+console.log(goods)
 </script>
 
 <style scoped>
