@@ -4,23 +4,23 @@
 <!--    <div class="cards">
         <div class="card"> <card/> </div>
     </div>-->
-
-    <div v-for="item in items" :key="item.id">
-        {{ item.id }}
+    <div v-for="item in items">
+        <div>{{ item['id'] }}</div>
+        <div>{{ item['title'] }}</div>
+        <div>{{ item['price'] }}</div>
+        <div>{{ item['description'] }}</div>
+        <div>{{ item['category'] }}</div>
+        <div>{{ item['image'] }}</div>
+        <div>{{ item['rating'].rate }}</div>
+        <div>{{ item['rating'].count }}</div>
     </div>
-
+  }
 </template>
 
-<script>
-import {reactive} from "vue";
-
-export default {
-    name: "greedCards",
-    components: {card}
-}
+<script setup>
+import {reactive, ref} from "vue";
 import card from "./card.vue";
   const goods = []
-  const items = reactive(goods)
     fetch("https://fakestoreapi.com/products")
     .then((response) => {
         return response.json();
@@ -29,7 +29,7 @@ import card from "./card.vue";
         goods.push(... data);
     });
 console.log(goods)
-
+const items = reactive(goods)
 </script>
 
 <style scoped>
