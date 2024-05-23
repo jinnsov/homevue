@@ -25,11 +25,28 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: "card"
-}
-//const props = defineProps({ id:Number });
+<script setup>
+const props = defineProps({
+    data: {
+        type: Object,
+        default(rawProps) {
+            return {
+                id: 0,
+                title: 'заголовок',
+                price: 100,
+                description: 'пусто',
+                category:'нет',
+                image:'нет',
+                rating: {
+                    rate:0,
+                    count:0
+                }
+            }
+        }
+    }
+});
+
+
 </script>
 
 <style scoped>
