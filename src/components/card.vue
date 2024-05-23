@@ -10,16 +10,11 @@
                         alt="Apple IPhone 14 PRO Max Gold"
                 />
             </a>
-            <!-- Скидка на товар -->
-            <div class="card__label">-10%</div>
         </div>
         <!-- Нижняя часть -->
         <div class="card__bottom">
             <!-- Цены на товар (с учетом скидки и без)-->
-            <div class="card__prices">
-                <div class="card__price card__price--discount">535 000</div>
-                <div class="card__price card__price--common">350 000</div>
-            </div>
+                <div>535 000</div>
             <!-- Ссылка-название товара -->
             <a href="#" class="card__title">
                 Смартфон Apple IPhone 14 Pro Max 256Gb, золотой
@@ -34,7 +29,7 @@
 export default {
     name: "card"
 }
-const props = defineProps(['name', 'age'])
+//const props = defineProps({ id:Number });
 </script>
 
 <style scoped>

@@ -3,8 +3,7 @@
         <!-- Карточка товара -->
     <div class="cards">
         <div class="card"> <card/> </div>
-        <div class="card"> <card/> </div>
-        <div class="card"> <card/> </div>
+
     </div>
 
 </template>
@@ -15,6 +14,8 @@ export default {
     components: {card}
 }
 import card from "./card.vue";
+let urlParams = new URLSearchParams("https://fakestoreapi.com/products")
+console.log(urlParams)
 </script>
 
 <style scoped>
