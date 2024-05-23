@@ -1,20 +1,26 @@
 <template>
   <!-- Сетка карточек товаров -->
         <!-- Карточка товара -->
-    <div class="cards">
+<!--    <div class="cards">
         <div class="card"> <card/> </div>
+    </div>-->
 
+    <div v-for="item in items" :key="item.id">
+        {{ item.id }}
     </div>
 
 </template>
 
 <script>
+import {reactive} from "vue";
+
 export default {
     name: "greedCards",
     components: {card}
 }
 import card from "./card.vue";
-const goods = []
+  const goods = []
+  const items = reactive(goods)
     fetch("https://fakestoreapi.com/products")
     .then((response) => {
         return response.json();
@@ -23,6 +29,7 @@ const goods = []
         goods.push(... data);
     });
 console.log(goods)
+
 </script>
 
 <style scoped>
