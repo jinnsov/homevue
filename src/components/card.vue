@@ -1,23 +1,25 @@
 <template>
-  <!-- Карточка товара -->
+    <!-- Карточка товара -->
     <div class="card">
         <!-- Верхняя часть -->
         <div class="card__top">
             <!-- Изображение-ссылка товара -->
             <a href="#" class="card__image">
-                <img
-                        src="./image/iphone-14-pro-max-gold.png"
-                        alt="Apple IPhone 14 PRO Max Gold"
-                />
+                <img :src="image" :alt="category" />
             </a>
+            <!-- Скидка на товар -->
+            <div class="card__label">{{rating.rate}}</div>
         </div>
         <!-- Нижняя часть -->
         <div class="card__bottom">
             <!-- Цены на товар (с учетом скидки и без)-->
-                <div>{{props.price}}</div>
+            <div class="card__prices">
+                <div class="card__price card__price--cost">{{price}}</div>
+                <div class="card__price card__price--count">{{rating.count}}</div>
+            </div>
             <!-- Ссылка-название товара -->
             <a href="#" class="card__title">
-                {{props.title}}
+                {{title}}
             </a>
             <!-- Кнопка добавить в корзину -->
             <button class="card__add">В корзину</button>
@@ -26,14 +28,16 @@
 </template>
 
 <script setup>
-const props = defineProps({
+import {computed} from "vue";
+
+/*const data = defineProps({
     data: {
         type: Object,
-        default(rawProps) {
+        default() {
             return {
                 id: 0,
                 title: 'заголовок',
-                price: 100,
+                price: 500,
                 description: 'пусто',
                 category:'нет',
                 image:'нет',
@@ -43,10 +47,23 @@ const props = defineProps({
                 }
             }
         }
-    }
-});
-
-
+    },
+});*/
+defineProps(
+    {id: Number,
+    title: String,
+    price: Number,
+    description: String,
+    category: String,
+    image: String,
+    rating: Object ,default:{
+            rating: {
+                rate:0,
+                count:0
+            }
+        }
+    },
+)
 </script>
 
 <style scoped>
@@ -117,44 +134,51 @@ const props = defineProps({
 .card__prices {
     display: flex;
     margin-bottom: 10px;
+    padding: 10px;
+
     flex: 0 0 50%; /* Размещаем цены равномерно в две колонки */
 }
 
 .card__price::after {
-    content: "₽";
     margin-left: 4px;
     position: relative;
 }
 
-.card__price--discount {
-    font-weight: 700;
+.card__price--count {
+    font-weight: 200;
     font-size: 19px;
     color: #414141;
     display: flex;
     flex-wrap: wrap-reverse;
 }
 
-.card__price--discount::before {
-    content: "Со скидкой";
-    font-weight: 400;
+.card__price--count::before {
+    content: "Осталось";
+    font-weight: 100;
     font-size: 13px;
     color: #bfbfbf;
+    margin-right: 3px;
 }
 
-.card__price--common {
+.card__price--cost {
     font-weight: 400;
     font-size: 17px;
     color: #606060;
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: flex-end;
+
 }
 
-.card__price--common::before {
-    content: "Обычная";
-    font-weight: 400;
+.card__price--cost::before {
+    content: "Цена";
+    font-weight: 200;
     font-size: 13px;
     color: #bfbfbf;
+    margin-right: 3px;
+}.card__price--cost::after {
+     content: "₽";
+     margin-right: 5px;
 }
 
 .card__title {
