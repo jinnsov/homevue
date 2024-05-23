@@ -1,6 +1,6 @@
 <template>
-        <div class="cards">
-            <div v-for="item of items" key="id">
+   <div class="cards">
+       <div v-for="item in items" :key="item.id">
             <card
                 :price = "item.price"
                 :title = "item.title"
@@ -9,15 +9,14 @@
                 :description="item.description"
             ></card>
         </div>
-    </div>
-
+   </div>
 </template>
 
 <script setup>
 import {reactive} from "vue";
-import Card from "./card.vue";
-import {goodsValues} from "./GoodsValues.js";
-const items = reactive(goodsValues)
+import Card from "./Card.vue";
+import {data} from "./LoadGoods.js";
+const items = reactive(data)
 </script>
 
 <style scoped>

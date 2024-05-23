@@ -1,5 +1,5 @@
 <script setup>
-import GreedCards from "./components/greedCards.vue";
+import GreedCards from "./components/GreedCards.vue";
 </script>
 
 <template>

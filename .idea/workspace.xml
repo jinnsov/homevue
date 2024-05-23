@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="">
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="App.vue разгрузил. Вывод товара в сетку засунул">
+      <change afterPath="$PROJECT_DIR$/src/components/LoadGoods.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GoodsValues.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/greedCards.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GreedCards.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,13 +21,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="lesson4a" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,6 +48,8 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;lesson4&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.15.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.15.0&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Dev/vue/cd38f1db-5adb-4694-8945-ece49ffa8181&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -54,6 +61,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dev\vue\homevue\src\components" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -84,7 +96,65 @@
       <workItem from="1715966027157" duration="19000" />
       <workItem from="1716399593811" duration="605000" />
       <workItem from="1716449887384" duration="3832000" />
+      <workItem from="1716498290953" duration="3382000" />
     </task>
+    <task id="LOCAL-00001" summary="start2">
+      <created>1716459065339</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716459065339</updated>
+    </task>
+    <task id="LOCAL-00002" summary="получить данные из fakestoreapi">
+      <created>1716460719739</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716460719739</updated>
+    </task>
+    <task id="LOCAL-00003" summary="формирую v-for">
+      <created>1716461916059</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716461916059</updated>
+    </task>
+    <task id="LOCAL-00004" summary="реализовал v-for">
+      <created>1716463376075</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716463376075</updated>
+    </task>
+    <task id="LOCAL-00005" summary="попытка добавить props">
+      <created>1716466267454</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716466267454</updated>
+    </task>
+    <task id="LOCAL-00006" summary="попытка добавить props">
+      <created>1716466335543</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716466335543</updated>
+    </task>
+    <task id="LOCAL-00007" summary="реализвал пропс в app.vue">
+      <created>1716494560256</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716494560256</updated>
+    </task>
+    <task id="LOCAL-00008" summary="App.vue разгрузил. Вывод товара в сетку засунул">
+      <created>1716498599715</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716498599715</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,6 +162,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start" />
-    <option name="LAST_COMMIT_MESSAGE" value="start" />
+    <MESSAGE value="start2" />
+    <MESSAGE value="получить данные из fakestoreapi" />
+    <MESSAGE value="формирую v-for" />
+    <MESSAGE value="реализовал v-for" />
+    <MESSAGE value="попытка добавить props" />
+    <MESSAGE value="реализвал пропс в app.vue" />
+    <MESSAGE value="App.vue разгрузил. Вывод товара в сетку засунул" />
+    <option name="LAST_COMMIT_MESSAGE" value="App.vue разгрузил. Вывод товара в сетку засунул" />
   </component>
 </project>

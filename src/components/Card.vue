@@ -29,8 +29,6 @@
 </template>
 
 <script setup>
-import {computed} from "vue";
-
 /*const data = defineProps({
     data: {
         type: Object,
