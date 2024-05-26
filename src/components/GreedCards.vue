@@ -1,6 +1,6 @@
 <template>
    <div class="cards">
-       <div v-for="item in items" :key="item.id">
+       <div v-for="item in dataFiltered" :key="item.id">
             <card
                 :price = "item.price"
                 :title = "item.title"
@@ -13,10 +13,8 @@
 </template>
 
 <script setup>
-import {reactive} from "vue";
 import Card from "./Card.vue";
-import {data} from "./LoadGoods.js";
-const items = reactive(data)
+defineProps({dataFiltered: Object})
 </script>
 
 <style scoped>

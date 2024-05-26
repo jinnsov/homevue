@@ -1,9 +1,22 @@
 <script setup>
 import GreedCards from "./components/GreedCards.vue";
+import Search from "./components/Search.vue";
+import {computed, reactive, ref} from "vue";
+import {data} from "./components/LoadGoods.js";
+ computed(data)
+const dataFiltered = reactive([... data]);
+function DataFilteredFromSearch (n){
+    dataFiltered.length=0
+    dataFiltered.push(...n);
+    console.log('parent: ' + dataFiltered.length)
+}
+
 </script>
 
 <template>
-  <greed-cards/>
+  <search :data  @data-filter="DataFilteredFromSearch"></search>
+  <greed-cards :dataFiltered></greed-cards>
+
 <!--  <HelloWorld msg="Vite + Vue" />-->
 </template>
 
