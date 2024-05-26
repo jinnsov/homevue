@@ -1,7 +1,7 @@
 <script setup>
 import GreedCards from "./components/GreedCards.vue";
 import Search from "./components/Search.vue";
-import {computed, reactive, ref} from "vue";
+import {computed, reactive} from "vue";
 import {data} from "./components/LoadGoods.js";
  computed(data)
 const dataFiltered = reactive([... data]);
