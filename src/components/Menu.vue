@@ -1,68 +1,27 @@
 <template>
-    <!-- Карточка товара -->
-    <div class="card">
-        <!-- Верхняя часть -->
-        <div class="card__description">{{description}}</div>
-        <div class="card__top">
-            <!-- Изображение-ссылка товара -->
-            <a href="#" class="card__image">
-                <img :src="image" :alt="category" />
-            </a>
-            <!-- Рэйтинг на товар -->
-            <div class="card__label">{{rating.rate}}</div>
-        </div>
-        <!-- Нижняя часть -->
-        <div class="menu__bottom">
-            <!-- Цены на товар (с учетом скидки и без)-->
-            <div class="card__prices">
-                <div class="card__price card__price--cost">{{price}}</div>
-                <div class="card__price card__price--count">{{rating.count}}</div>
-            </div>
-            <!-- Ссылка-название товара -->
-            <a href="#" class="card__title">
-                {{title}}
-            </a>
-            <!-- Кнопка добавить в корзину -->
-            <button class="button__add">В корзину</button>
-        </div>
+    <div class="card__prices">
+        <button class="button__add" @click="btn(0)">Товары</button>
+        <button class="button__add" @click="btn(1)">Добавить товар</button>
+        <button class="button__add" @click="btn(2)">Адрес отправки</button>
+        <button class="button__add" @click="btn(3)">Получатель</button>
     </div>
+    <div v-if="SelBtn === 1"><AddProduct></AddProduct></div>
+    <div v-if="SelBtn === 2"><ClientPerson></ClientPerson></div>
+    <div v-if="SelBtn === 3"><ClientAddress></ClientAddress></div>
+
 </template>
 
 <script setup>
-/*const data = defineProps({
-    data: {
-        type: Object,
-        default() {
-            return {
-                id: 0,
-                title: 'заголовок',
-                price: 500,
-                description: 'пусто',
-                category:'нет',
-                image:'нет',
-                rating: {
-                    rate:0,
-                    count:0
-                }
-            }
-        }
-    },
-});*/
-defineProps(
-    {id: Number,
-    title: String,
-    price: Number,
-    description: String,
-    category: String,
-    image: String,
-    rating: Object ,default:{
-            rating: {
-                rate:0,
-                count:0
-            }
-        }
-    },
-)
+
+import {ref} from "vue";
+import ClientAddress from "./ClientAddress.vue";
+import ClientPerson from "./ClientPerson.vue";
+import AddProduct from "./AddProduct.vue";
+const SelBtn = ref(0)
+function btn (n){
+    SelBtn.value = n
+
+}
 </script>
 
 <style scoped>
@@ -122,12 +81,12 @@ defineProps(
     font-size: 16px;
     color: #fff;
 }.card__description {
-    background: #ffffff;
-    border-radius: 4px;
-    font-weight: 400;
-    font-size: 12px;
-    color: #151414;
-}
+     background: #ffffff;
+     border-radius: 4px;
+     font-weight: 400;
+     font-size: 12px;
+     color: #151414;
+ }
 
 .menu__bottom {
     display: flex;
@@ -184,7 +143,7 @@ defineProps(
 }.card__price--cost::after {
      content: "₽";
      margin-right: 5px;
-}
+ }
 
 .card__title {
     display: block;

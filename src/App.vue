@@ -3,8 +3,12 @@ import GreedCards from "./components/GreedCards.vue";
 import Search from "./components/Search.vue";
 import {computed, reactive} from "vue";
 import {data} from "./components/LoadGoods.js";
+import Menu from "./components/Menu.vue";
+import ClientPerson from "./components/ClientPerson.vue";
+import ClientAddress from "./components/ClientAddress.vue";
  computed(data)
 const dataFiltered = reactive([... data]);
+ const model = defineModel()
 function DataFilteredFromSearch (n){
     dataFiltered.length=0
     dataFiltered.push(...n);
@@ -14,6 +18,7 @@ function DataFilteredFromSearch (n){
 </script>
 
 <template>
+  <Menu></Menu>
   <search :data  @data-filter="DataFilteredFromSearch"></search>
   <greed-cards :dataFiltered></greed-cards>
 
