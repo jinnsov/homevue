@@ -1,20 +1,25 @@
 <template>
     <form>
         <div class="button__group">
-            <input type="text" placeholder="Город" v-model="inputText">
-            <input type="text" placeholder="Улица" v-model="inputText">
-            <input type="text" placeholder="Дом" v-model="inputText">
-            <input type="text" placeholder="Квартира" v-model="inputText">
+            <input type="text"  placeholder="Город" v-model="inputText.city">
+            <input type="text" placeholder="Улица" v-model="inputText.street">
+            <input type="text" placeholder="Дом" v-model="inputText.house">
+            <input type="text" placeholder="Квартира" v-model="inputText.flat">
         </div>
         <div class="add-card">
-            <button type="button" class="button__add">Добавить</button>
+            <button type="button" class="button__add" @click="btn">Добавить</button>
             <button type="reset" class="button__add">Очистить</button>
         </div>
     </form>
 </template>
 
 <script setup>
-const inputText = defineModel()
+import {reactive} from "vue";
+
+const inputText = reactive({'city':'','street':'','house':'','flat':''})
+function btn (){
+    console.log('click' + inputText.house)
+}
 </script>
 
 <style scoped>
