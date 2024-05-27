@@ -5,6 +5,10 @@
         <button class="button__add" @click="btn(2)">Адрес отправки</button>
         <button class="button__add" @click="btn(3)">Получатель</button>
     </div>
+    <div v-if="SelBtn === 0">
+        <search :data  @data-filter="DataFilteredFromSearch"></search>
+        <greed-cards :dataFiltered></greed-cards>
+    </div>
     <div v-if="SelBtn === 1"><AddProduct></AddProduct></div>
     <div v-if="SelBtn === 2"><ClientPerson></ClientPerson></div>
     <div v-if="SelBtn === 3"><ClientAddress></ClientAddress></div>
@@ -13,15 +17,24 @@
 
 <script setup>
 
-import {ref} from "vue";
+import {computed, reactive, ref} from "vue";
 import ClientAddress from "./ClientAddress.vue";
 import ClientPerson from "./ClientPerson.vue";
 import AddProduct from "./AddProduct.vue";
+import Search from "./Search.vue";
+import {data} from "./LoadGoods.js";
+import GreedCards from "./GreedCards.vue";
+computed(data)
+const dataFiltered = reactive([... data]);
+const model = defineModel()
 const SelBtn = ref(0)
-function btn (n){
-    SelBtn.value = n
-
+function btn (n){   SelBtn.value = n  }
+function DataFilteredFromSearch (n){
+    dataFiltered.length=0
+    dataFiltered.push(...n);
+    console.log('parent: ' + dataFiltered.length)
 }
+
 </script>
 
 <style scoped>
