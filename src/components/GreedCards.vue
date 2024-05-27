@@ -1,23 +1,43 @@
 <template>
-   <div class="cards">
-       <div v-for="item in dataFiltered" :key="item.id">
-            <card
-                :price = "item.price"
-                :title = "item.title"
-                :image = "item.image"
-                :rating = "item.rating"
-                :description="item.description"
-            ></card>
+    <div class="goods-section">
+        <search :data="dataFiltered"  @data-filter="DataFilteredFromSearch" />
+        <div class="cards">
+            <div v-for="item in dataFiltered" :key="item.id">
+                <card
+                        :price = "item.price"
+                        :title = "item.title"
+                        :image = "item.image"
+                        :rating = "item.rating"
+                        :description="item.description"
+                ></card>
+            </div>
         </div>
-   </div>
+    </div>
 </template>
 
 <script setup>
 import Card from "./Card.vue";
-defineProps({dataFiltered: Object})
+import Search from "./Search.vue";
+
+import {reactive} from "vue";
+import {data} from "./LoadGoods.js";
+const dataFiltered = reactive([... data]);
+
+function DataFilteredFromSearch (n){
+    dataFiltered.length=0
+    dataFiltered.push(...n);
+    console.log('parent: ' + dataFiltered.length)
+}
 </script>
 
 <style scoped>
+.goods-section {
+    display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
 .cards {
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
