@@ -1,6 +1,6 @@
 <template>
     <div class="goods-section">
-        <search :data="dataFiltered"  @data-filter="DataFilteredFromSearch" />
+        <search :data="data"  @data-filter="DataFilteredFromSearch" />
         <div class="cards">
             <div v-for="item in dataFiltered" :key="item.id">
                 <card

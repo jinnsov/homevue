@@ -1,13 +1,13 @@
 <script setup>
 import Menu from "./components/Menu.vue";
-import {ref} from "vue";
+import {shallowRef} from "vue";
 import GreedCards from "./components/GreedCards.vue";
 import ClientPerson from "./components/ClientPerson.vue";
 import ClientAddress from "./components/ClientAddress.vue";
 import AddProduct from "./components/AddProduct.vue";
 
 const sections = [GreedCards, AddProduct, ClientAddress, ClientPerson ]
-let selectedComponent = ref(GreedCards)
+const selectedComponent = shallowRef(GreedCards)
 
 function SelectedMethod (n){
     selectedComponent.value = sections[n]

@@ -5,24 +5,9 @@
         <button class="button__add" @click="btn(2)">Адрес отправки</button>
         <button class="button__add" @click="btn(3)">Получатель</button>
     </div>
-    <!--<div v-if="SelBtn === 0">
-        <search :data  @data-filter="DataFilteredFromSearch"></search>
-        <greed-cards :dataFiltered></greed-cards>
-    </div>
-    <div v-if="SelBtn === 1"><AddProduct></AddProduct></div>
-    <div v-if="SelBtn === 2"><ClientPerson></ClientPerson></div>
-    <div v-if="SelBtn === 3"><ClientAddress></ClientAddress></div>-->
-
 </template>
 
 <script setup>
-
-import {computed, reactive, ref} from "vue";
-import ClientAddress from "./ClientAddress.vue";
-import ClientPerson from "./ClientPerson.vue";
-import AddProduct from "./AddProduct.vue";
-import Search from "./Search.vue";
-
 const emits =defineEmits(['section-click'])
 function btn (n){  emits( 'section-click',n) }
 </script>

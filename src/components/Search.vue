@@ -4,18 +4,16 @@
         <button type="button"
                 @click="filters"
         ></button>
-        <slot name="search" :search="filters"></slot>
     </form>
 </template>
 
 <script setup>
-import {ref} from "vue";
-const inputText = defineModel()
-const emit = defineEmits(['test-val', 'data-filter'])
-const props = defineProps({data:Object})
+const inputText = defineModel('inputText');
+const emit = defineEmits(['data-filter']);
+const props = defineProps({data:Object});
 function filters() {
     //фильтрация списка товаров, пустое поле - все товары
-    const seek = inputText.value !== ''
+    const seek = inputText.value
     ? props.data.filter(f =>
                 f.price === Number(inputText.value)
                 ||
@@ -23,14 +21,8 @@ function filters() {
                 )
     :props.data;
 
-    emit('data-filter', seek)
-    console.log('emit.child.filters:' + seek.length);
+    emit('data-filter', seek);
 }
-function updateValue() {
-    emit('test-val','emit value' )
-    console.log('emit.name');
-}
-
 </script>
 
 <style scoped>

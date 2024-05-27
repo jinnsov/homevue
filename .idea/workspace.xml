@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="Сдеалал макет Меню и формы w2">
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="Сделал рабочюю версию меню с формами (поиск, карточки...)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddProduct.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientAddress.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientAddress.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientPerson.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientPerson.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GreedCards.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GreedCards.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +34,16 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="Сдеалал макет Меню и формы" />
+        <option name="rewordedMessage" value="Сдеалал макет Меню и формы" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="e4a866aec936bb154feb2b9cfff8c1f515b68172" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -101,7 +114,7 @@
       <workItem from="1716449887384" duration="3832000" />
       <workItem from="1716498290953" duration="5317000" />
       <workItem from="1716627936940" duration="59166000" />
-      <workItem from="1716798073302" duration="7100000" />
+      <workItem from="1716798073302" duration="16085000" />
     </task>
     <task id="LOCAL-00001" summary="start2">
       <created>1716459065339</created>
@@ -215,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716802614949</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Сделал рабочюю версию меню с формами (поиск, карточки...)">
+      <created>1716806504023</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716806504023</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +266,7 @@
     <MESSAGE value="Добавил поиск/фильтр товаров. Поиск по пустому полю - все товары" />
     <MESSAGE value="Сдеалал макет Меню и формы" />
     <MESSAGE value="Сдеалал макет Меню и формы w2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сдеалал макет Меню и формы w2" />
+    <MESSAGE value="Сделал рабочюю версию меню с формами (поиск, карточки...)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал рабочюю версию меню с формами (поиск, карточки...)" />
   </component>
 </project>
