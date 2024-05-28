@@ -2,7 +2,7 @@
     <div class="card__prices">
         <button class="button__add" @click="btn(0)">Товары</button>
         <button class="button__add" @click="btn(1)">Добавить товар</button>
-        <button class="button__add" @click="btn(2)">Адрес отправки</button>
+        <button class="button__add" @click="btn(2)">Адрес доставки</button>
         <button class="button__add" @click="btn(3)">Получатель</button>
     </div>
 </template>

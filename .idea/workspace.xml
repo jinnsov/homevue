@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="Добавил кнопки &quot;Добавить&quot; и &quot;Очистить&quot;">
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="Частичто валидацию сделал">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClientAddress.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientAddress.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientPerson.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientPerson.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +108,7 @@
       <workItem from="1716449887384" duration="3832000" />
       <workItem from="1716498290953" duration="5317000" />
       <workItem from="1716627936940" duration="59166000" />
-      <workItem from="1716798073302" duration="20654000" />
+      <workItem from="1716798073302" duration="49963000" />
     </task>
     <task id="LOCAL-00001" summary="start2">
       <created>1716459065339</created>
@@ -236,7 +236,21 @@
       <option name="project" value="LOCAL" />
       <updated>1716818693644</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Погдотовка формы Адрес к валидации (vee-validate)">
+      <created>1716832533449</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716832533449</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Частичто валидацию сделал">
+      <created>1716902358473</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716902358473</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +283,8 @@
     <MESSAGE value="Сдеалал макет Меню и формы w2" />
     <MESSAGE value="Сделал рабочюю версию меню с формами (поиск, карточки...)" />
     <MESSAGE value="Добавил кнопки &quot;Добавить&quot; и &quot;Очистить&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил кнопки &quot;Добавить&quot; и &quot;Очистить&quot;" />
+    <MESSAGE value="Погдотовка формы Адрес к валидации (vee-validate)" />
+    <MESSAGE value="Частичто валидацию сделал" />
+    <option name="LAST_COMMIT_MESSAGE" value="Частичто валидацию сделал" />
   </component>
 </project>

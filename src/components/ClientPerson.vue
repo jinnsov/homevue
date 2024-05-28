@@ -1,24 +1,98 @@
 <template>
-    <form>
+    <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
         <div class="button__group">
-            <input type="text" placeholder="Фамилия" v-model="inputText">
-            <input type="text" placeholder="Имя" v-model="inputText">
-            <input type="text" placeholder="Отчество" v-model="inputText">
+            <p>Персональные данные</p>
+            <Field name="last" type="input" style="'input'" placeholder="Фамилия"/>
+            <ErrorMessage  name="last" />
+            <Field name="first" type="input" style="'input'" placeholder="Имя"/>
+            <ErrorMessage  name="first" />
+            <Field name="second" type="input" style="'input'" placeholder="Отчество"/>
+            <ErrorMessage  name="second" />
+            <Field name="birth" type="input" style="'input'"
+                   :placeholder="new Date().toLocaleDateString().split('T')[0]" />
+            <ErrorMessage  name="birth" />
+        <div class="button__group">
+            <p>Реквизиты банковской карты</p>
+            <Field name="num" type="input" style="'input'" placeholder="Номер (0000-0000-0000-0000)"/>
+            <ErrorMessage  name="num"  style="color: red"/>
+            <Field name="cvv" type="input" style="'input'" placeholder="CVV (000)"/>
+            <ErrorMessage  name="cvv"  style="color: red"/>
+        </div>
+            <div>
+                <Field name="agreed" type="checkbox"></Field>
+                <p>Согласие на обработку персональных данных</p>
+                <p style="color: red"><ErrorMessage  name="agreed" class=""/></p>
+            </div>
         </div>
         <div class="add-card">
-            <button type="button" class="button__add">Добавить</button>
-            <button type="reset" class="button__add">Очистить</button>
+                <button type="submit" class="button__add">Добавить</button>
+                <button type="reset" class="button__add">Очистить</button>
         </div>
-        <div class="agreed">
-            <input type="checkbox">
-            <label>Согласие на обработку персональных данных</label>
-        </div>
+
+
+<!--                    <p>Values</p>
+            <pre>{{ values }}</pre>-->
     </form>
 </template>
 
 <script setup>
-const inputText = defineModel()
-function test(){}
+// https://vee-validate.logaretm.com/v4/examples/checkboxes-and-radio/
+import {Form, Field, ErrorMessage} from "vee-validate"
+const schema = {
+    last: (value) => {
+        if (value && value.trim().length) {
+            return true;
+        }
+        return 'Не заполнено поле "Фамилия"';
+    },
+    first: (value) => {
+        if (value && value.trim().length) {
+            return true;
+        }
+        return 'Не заполнено поле "Имя"';
+    },
+    second: (value) => {
+        if (value) {
+            return true;
+        }
+        return 'Не заполнено поле "Отчество"';
+    },
+    num: (value) => {
+        if (! value) {
+            return 'Введите номер карты';
+        }
+        if(value
+            .replace(/\D/g , '')
+            .match(/^\d{16}$/)){return true}
+
+            return 'Неправильный номер карты'
+    },
+    cvv: (value) => {
+        if (! value) {
+            return 'Введите cvv-код карты';
+        }
+        if(value
+            .match(/^\d{3}$/)){return true}
+            return 'Не правильный cvv-код карты'
+    },
+    birth: (value) => {
+        const dateReg = /^\d{2}[.-]\d{2}[.-]\d{4}$/
+        if (value && value.match(dateReg)) {
+            return true;
+        }
+        return 'Не валидная Дата рождения';
+    },
+    agreed: (value) => {
+        if (!value) {
+            return true;
+        }
+        return 'Подтвердите согласие на обработку персональных данных';
+    },
+};
+function onSubmit(values) {
+    alert(values.birth)
+    console.log(JSON.stringify(values, null, 2));
+}
 </script>
 
 <style scoped>
@@ -28,7 +102,7 @@ form {
     width: 300px;
     margin: 0 auto;
 }
-input[type="text"] {
+input {
     width: 100%;
     height: 42px;
     padding-left: 10px;
@@ -38,6 +112,7 @@ input[type="text"] {
     background: #F9F0DA;
     color: #9E9C9C;
 }
+
 .add-card {
     width: auto;
     min-height: 50px;

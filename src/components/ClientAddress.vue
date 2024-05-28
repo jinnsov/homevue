@@ -1,24 +1,63 @@
 <template>
-    <form>
-        <div class="button__group">
-            <input type="text"  placeholder="Город" v-model="inputText.city">
-            <input type="text" placeholder="Улица" v-model="inputText.street">
-            <input type="text" placeholder="Дом" v-model="inputText.house">
-            <input type="text" placeholder="Квартира" v-model="inputText.flat">
-        </div>
-        <div class="add-card">
-            <button type="button" class="button__add" @click="btn">Добавить</button>
-            <button type="reset" class="button__add">Очистить</button>
-        </div>
-    </form>
+    <div id="app">
+        <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
+            <div class="button__group">
+                <Field name="city" type="input" style="'input'" placeholder="Город"/>
+                <Field name="street" type="input" style="'input'" placeholder="Улица"/>
+                <Field name="house" type="input" style="'input'" placeholder="Дом"/>
+                <Field name="flat" type="input" style="'input'" placeholder="Квартира"/>
+            </div>
+            <div class="add-card">
+                <button type="submit" class="button__add">Добавить</button>
+                <button type="reset" class="button__add">Очистить</button>
+            </div>
+            <div>
+                <ErrorMessage  name="city" />
+                <ErrorMessage  name="street" />
+                <ErrorMessage  name="house" />
+                <ErrorMessage  name="flat" />
+            </div>
+
+<!--            <p>Values</p>
+            <pre>{{ values }}</pre>-->
+        </Form>
+    </div>
 </template>
 
 <script setup>
-import {reactive} from "vue";
-
-const inputText = reactive({'city':'','street':'','house':'','flat':''})
-function btn (){
-    console.log('click' + inputText.house)
+import {Form, Field, ErrorMessage} from "vee-validate"
+const schema = {
+    city: (value) => {
+        if (value && value.trim().length) {
+            console.log('ok')
+            return true;
+        }
+        return 'Не заполнено поле "Город"';
+    },
+    street: (value) => {
+        if (value && value.trim().length) {
+            console.log('ok')
+            return true;
+        }
+        return 'Не заполнено поле "Улица"';
+    },
+    house: (value) => {
+        if (value && value.trim().length) {
+            console.log('ok')
+            return true;
+        }
+        return 'Не заполнено поле "Дом"';
+    },
+    flat: (value) => {
+        if (value && value.trim().length) {
+            console.log('ok')
+            return true;
+        }
+        return 'Не заполнено поле "Квартира"';
+    },
+};
+function onSubmit(values) {
+    console.log(JSON.stringify(values, null, 2));
 }
 </script>
 
@@ -81,5 +120,16 @@ input {
     cursor: pointer; /* Меняем курсор при наведении */
     margin-top: auto; /* Прижимаем кнопку к низу карточки */
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card__label {
+    padding: 4px 8px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #ff6633;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
 }
 </style>
