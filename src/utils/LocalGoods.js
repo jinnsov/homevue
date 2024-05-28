@@ -1,3 +1,4 @@
+// @deprecated
 const goodsValues = [
     {
         "id": 1,

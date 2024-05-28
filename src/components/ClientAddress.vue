@@ -2,6 +2,7 @@
     <div id="app">
         <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
             <div class="button__group">
+                <p>Адрес доставки</p>
                 <Field name="city" type="input" style="'input'" placeholder="Город"/>
                 <Field name="street" type="input" style="'input'" placeholder="Улица"/>
                 <Field name="house" type="input" style="'input'" placeholder="Дом"/>
@@ -17,7 +18,8 @@
                 <ErrorMessage  name="house" />
                 <ErrorMessage  name="flat" />
             </div>
-
+            <pre class="agreed">{{isPostComplete ? 'Загрузка...' : '' }}</pre>
+            <pre style="color: red">{{postStatusError}}</pre>
 <!--            <p>Values</p>
             <pre>{{ values }}</pre>-->
         </Form>
@@ -26,6 +28,10 @@
 
 <script setup>
 import {Form, Field, ErrorMessage} from "vee-validate"
+import axios from "axios";
+import {ref} from "vue";
+const isPostComplete = ref(false)
+const postStatusError = ref(undefined)
 const schema = {
     city: (value) => {
         if (value && value.trim().length) {
@@ -57,7 +63,22 @@ const schema = {
     },
 };
 function onSubmit(values) {
-    console.log(JSON.stringify(values, null, 2));
+   // console.log(JSON.stringify(values, null, 2));
+    axiosPost(values)
+}
+function axiosPost(values){
+    isPostComplete.value = true
+    axios.post('https://httpbin.org/post', {values}).then((response) => {
+        // handle response
+        // console.log('response: '  + JSON.stringify(response.data, null, 2))
+        isPostComplete.value = false
+        postStatusError.value = undefined
+    }).catch((reject) => {
+        postStatusError.value = reject.message
+        console.error(reject.message)
+
+    })
+
 }
 </script>
 

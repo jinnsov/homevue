@@ -46,7 +46,10 @@ margin: 0;
     align-items: center;
 }
 
-.menu {}
+.menu {
+    border: 1px solid #70c05b;
+    background: #f9f9f9;
+}
 
 .content {
     justify-self: stretch;

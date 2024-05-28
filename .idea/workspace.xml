@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="&#10;&#10;&#10;&#10;Сделал: &#10;- валидацию (лайтовую)&#10;- оправку axios post запросов">
-      <change beforePath="$PROJECT_DIR$/src/components/AddProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddProduct.vue" afterDir="false" />
-    </list>
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="&#10;&#10;&#10;Рефакторинг" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,15 +26,27 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+  }
+}</component>
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="Сдеалал макет Меню и формы" />
-        <option name="rewordedMessage" value="Сдеалал макет Меню и формы" />
+        <option name="originalMessage" value="Рефакторинг" />
+        <option name="rewordedMessage" value="Рефакторинг" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="e4a866aec936bb154feb2b9cfff8c1f515b68172" />
+    <option name="onto" value="492122dc4ffeb3d3a18da0948cfced9abfb072b5" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9c6a0c39-bc65-404a-baa1-3f20f16a0289" />
+        <option name="url" value="https://github.com/jinnsov/homevue.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -72,6 +82,7 @@
       <recent name="D:\Dev\vue\homevue\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dev\vue\homevue\src\utils" />
       <recent name="D:\Dev\vue\homevue\src\components" />
     </key>
   </component>
@@ -107,7 +118,7 @@
       <workItem from="1716449887384" duration="3832000" />
       <workItem from="1716498290953" duration="5317000" />
       <workItem from="1716627936940" duration="59166000" />
-      <workItem from="1716798073302" duration="58820000" />
+      <workItem from="1716798073302" duration="62330000" />
     </task>
     <task id="LOCAL-00001" summary="start2">
       <created>1716459065339</created>
@@ -263,7 +274,49 @@
       <option name="project" value="LOCAL" />
       <updated>1716920349979</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="&#10;&#10;&#10;&#10;Сделал: &#10;- валидацию (лайтовую)&#10;- оправку axios post запросов">
+      <created>1716920579229</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1716920579229</updated>
+    </task>
+    <task id="LOCAL-00024" summary="&#10;&#10;&#10;&#10;Рефакторинг">
+      <created>1716922274778</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1716922274778</updated>
+    </task>
+    <task id="LOCAL-00025" summary="&#10;&#10;&#10;Рефакторинг">
+      <created>1716922556763</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1716922556763</updated>
+    </task>
+    <task id="LOCAL-00026" summary="&#10;&#10;&#10;Рефакторинг">
+      <created>1716923202078</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1716923202078</updated>
+    </task>
+    <task id="LOCAL-00027" summary="&#10;&#10;&#10;Рефакторинг">
+      <created>1716923766450</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1716923766450</updated>
+    </task>
+    <task id="LOCAL-00028" summary="&#10;&#10;&#10;Рефакторинг">
+      <created>1716923898679</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1716923898679</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +352,8 @@
     <MESSAGE value="Погдотовка формы Адрес к валидации (vee-validate)" />
     <MESSAGE value="Частичто валидацию сделал" />
     <MESSAGE value="&#10;&#10;&#10;&#10;Сделал: &#10;- валидацию (лайтовую)&#10;- оправку axios post запросов" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;&#10;&#10;&#10;Сделал: &#10;- валидацию (лайтовую)&#10;- оправку axios post запросов" />
+    <MESSAGE value="&#10;&#10;&#10;&#10;Рефакторинг" />
+    <MESSAGE value="&#10;&#10;&#10;Рефакторинг" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;&#10;&#10;Рефакторинг" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 <template>
     <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
         <div class="button__group">
+            <p>Добавить товар</p>
             <Field name="title" type="input" placeholder="Заголовок"></Field>
             <Field name="price" type="input" placeholder="Цена"></Field>
             <Field name="description" type="input" placeholder="Описание"></Field>

@@ -1,4 +1,3 @@
-
 // GET request using fetch with async/await
 import {goodsValues} from "./LocalGoods.js";
 let ret = null

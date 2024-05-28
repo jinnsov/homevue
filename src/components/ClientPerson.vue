@@ -1,8 +1,7 @@
 <template>
-
     <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
         <div class="button__group">
-            <p>Персональные данные</p>
+            <p>Персональные данные получателя</p>
             <Field name="last" type="input" style="'input'" placeholder="Фамилия"/>
             <ErrorMessage  name="last" />
             <Field name="first" type="input" style="'input'" placeholder="Имя"/>
@@ -10,7 +9,7 @@
             <Field name="second" type="input" style="'input'" placeholder="Отчество"/>
             <ErrorMessage  name="second" />
             <Field name="birth" type="input" style="'input'"
-                   :placeholder="new Date().toLocaleDateString().split('T')[0]" />
+                   :placeholder="'Дата рождения (' + new Date('2000/01/01').toLocaleDateString().split('T')[0] +')'" />
             <ErrorMessage  name="birth" />
         <div class="button__group">
             <p>Реквизиты банковской карты</p>
@@ -20,8 +19,8 @@
             <ErrorMessage  name="cvv"  style="color: red"/>
         </div>
             <div>
-                <Field name="agreed" type="checkbox"></Field>
                 <p>Согласие на обработку персональных данных</p>
+                <Field name="agreed" type="checkbox"></Field>
                 <p style="color: red"><ErrorMessage  name="agreed" class=""/></p>
             </div>
         </div>
@@ -29,12 +28,10 @@
                 <button type="submit" class="button__add">Добавить</button>
                 <button type="reset" class="button__add">Очистить</button>
         </div>
-
 <!--                    <p>Values</p>
             <pre>{{ values }}</pre>-->
         <pre class="agreed">{{isPostComplete ? 'Загрузка...' : '' }}</pre>
         <pre style="color: red">{{postStatusError}}</pre>
-
     </form>
 
 </template>
@@ -96,7 +93,7 @@ const schema = {
     },
 };
 function onSubmit(values) {
-    alert(values.birth)
+    //alert(values.birth)
     ///console.log(JSON.stringify(values, null, 2));
     axiosPost()
 }

@@ -20,7 +20,7 @@ import Card from "./Card.vue";
 import Search from "./Search.vue";
 
 import {reactive} from "vue";
-import {data} from "./LoadGoods.js";
+import {data} from "../utils/LoadGoods.js";
 const dataFiltered = reactive([... data]);
 
 function DataFilteredFromSearch (n){
