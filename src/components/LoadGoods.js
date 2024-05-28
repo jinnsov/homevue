@@ -9,6 +9,7 @@ try {
     console.error(e)
 }
 
-// есди АПИ не доступен - взять  локальные данные:
-const data =  ret ? ret : goodsValues
+//В ЦЕЛЯХ ТЕСТИРОВАНИЯ !!! если этот ненадёжный АПИ не доступен - взять  локальные данные:
+/*const data =  ret ? ret : goodsValues*/
+const data = ret === null ? {} : ret;
 export { data }

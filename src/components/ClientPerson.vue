@@ -1,4 +1,5 @@
 <template>
+
     <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
         <div class="button__group">
             <p>Персональные данные</p>
@@ -29,15 +30,20 @@
                 <button type="reset" class="button__add">Очистить</button>
         </div>
 
-
 <!--                    <p>Values</p>
             <pre>{{ values }}</pre>-->
+        <pre class="agreed">{{isPostComplete ? 'Загрузка...' : '' }}</pre>
+        <pre style="color: red">{{postStatusError}}</pre>
+
     </form>
+
 </template>
 
 <script setup>
 // https://vee-validate.logaretm.com/v4/examples/checkboxes-and-radio/
-import {Form, Field, ErrorMessage} from "vee-validate"
+import {Form, Field, ErrorMessage,} from "vee-validate"
+import axios from 'axios'
+import {ref} from "vue";
 const schema = {
     last: (value) => {
         if (value && value.trim().length) {
@@ -91,7 +97,24 @@ const schema = {
 };
 function onSubmit(values) {
     alert(values.birth)
-    console.log(JSON.stringify(values, null, 2));
+    ///console.log(JSON.stringify(values, null, 2));
+    axiosPost()
+}
+const isPostComplete = ref(false)
+const postStatusError = ref(undefined)
+function axiosPost(values){
+   isPostComplete.value = true
+   axios.post('https://httpbin.org/post', {values}).then((response) => {
+      // handle response
+      // console.log('response: '  + JSON.stringify(response.data, null, 2))
+       isPostComplete.value = false
+       postStatusError.value = undefined
+    }).catch((reject) => {
+       postStatusError.value = reject.message
+       console.error(reject.message)
+
+   })
+
 }
 </script>
 
@@ -160,5 +183,7 @@ input {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
     display: block;
     border: 1px solid #70c05b;
-    padding: 10px 2px 1px;}
+    padding: 10px 10px 10px;
+    height: 40px ;
+}
 </style>
