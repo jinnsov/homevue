@@ -26,7 +26,7 @@ const dataFiltered = reactive([... data]);
 function DataFilteredFromSearch (n){
     dataFiltered.length=0
     dataFiltered.push(...n);
-    console.log('parent: ' + dataFiltered.length)
+    //console.log('parent: ' + dataFiltered.length)
 }
 </script>
 

@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="&#10;&#10;&#10;Рефакторинг">
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="&#10;Рефактринг&#10;&#10;Рефакторинг">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClientAddress.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientAddress.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GreedCards.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GreedCards.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +121,7 @@
       <workItem from="1716449887384" duration="3832000" />
       <workItem from="1716498290953" duration="5317000" />
       <workItem from="1716627936940" duration="59166000" />
-      <workItem from="1716798073302" duration="67024000" />
+      <workItem from="1716798073302" duration="68622000" />
     </task>
     <task id="LOCAL-00001" summary="start2">
       <created>1716459065339</created>
@@ -326,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716924155987</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="&#10;Рефактринг&#10;&#10;Рефакторинг">
+      <created>1716971648020</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1716971648020</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,6 +371,8 @@
     <MESSAGE value="&#10;&#10;&#10;&#10;Сделал: &#10;- валидацию (лайтовую)&#10;- оправку axios post запросов" />
     <MESSAGE value="&#10;&#10;&#10;&#10;Рефакторинг" />
     <MESSAGE value="&#10;&#10;&#10;Рефакторинг" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;&#10;&#10;Рефакторинг" />
+    <MESSAGE value="&#10;Рефактринг&#10;&#10;Рефакторинг" />
+    <MESSAGE value="Рефакторинг" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;Рефактринг&#10;&#10;Рефакторинг" />
   </component>
 </project>
