@@ -12,11 +12,8 @@
                 <button type="submit" class="button__add">Добавить</button>
                 <button type="reset" class="button__add">Очистить</button>
             </div>
-            <div>
-                <ErrorMessage  name="city" />
-                <ErrorMessage  name="street" />
-                <ErrorMessage  name="house" />
-                <ErrorMessage  name="flat" />
+            <div v-for="item in schema">
+                <ErrorMessage  :name="item.name" />
             </div>
             <pre class="agreed">{{isPostComplete ? 'Загрузка...' : '' }}</pre>
             <pre style="color: red">{{postStatusError}}</pre>
@@ -35,28 +32,24 @@ const postStatusError = ref(undefined)
 const schema = {
     city: (value) => {
         if (value && value.trim().length) {
-            console.log('ok')
             return true;
         }
         return 'Не заполнено поле "Город"';
     },
     street: (value) => {
         if (value && value.trim().length) {
-            console.log('ok')
             return true;
         }
         return 'Не заполнено поле "Улица"';
     },
     house: (value) => {
         if (value && value.trim().length) {
-            console.log('ok')
             return true;
         }
         return 'Не заполнено поле "Дом"';
     },
     flat: (value) => {
         if (value && value.trim().length) {
-            console.log('ok')
             return true;
         }
         return 'Не заполнено поле "Квартира"';

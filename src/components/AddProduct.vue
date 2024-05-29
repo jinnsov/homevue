@@ -12,12 +12,8 @@
             <button type="submit" class="button__add">Добавить</button>
             <button type="reset" class="button__add">Очистить</button>
         </div>
-        <div>
-            <ErrorMessage  name="title" />
-            <ErrorMessage  name="price" />
-            <ErrorMessage  name="description" />
-            <ErrorMessage  name="category" />
-            <ErrorMessage  name="image" />
+        <div v-for="item in schema">
+            <ErrorMessage  :name="item.name" />
         </div>
 <!--            <p>Values</p>
             <pre>{{ values }}</pre>-->
