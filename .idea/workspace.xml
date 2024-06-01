@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="&#10;Рефактринг&#10;&#10;Рефакторинг">
+      <change afterPath="$PROJECT_DIR$/src/components/Loading.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/AxiosPost.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddProduct.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientAddress.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientAddress.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientPerson.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientPerson.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GreedCards.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GreedCards.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +126,9 @@
       <workItem from="1716449887384" duration="3832000" />
       <workItem from="1716498290953" duration="5317000" />
       <workItem from="1716627936940" duration="59166000" />
-      <workItem from="1716798073302" duration="68622000" />
+      <workItem from="1716798073302" duration="70551000" />
+      <workItem from="1717169163966" duration="20119000" />
+      <workItem from="1717226042797" duration="15308000" />
     </task>
     <task id="LOCAL-00001" summary="start2">
       <created>1716459065339</created>
@@ -333,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716971648020</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="&#10;Рефактринг&#10;&#10;Рефакторинг">
+      <created>1716996420525</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1716996420525</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,8 +385,26 @@
     <MESSAGE value="&#10;&#10;&#10;&#10;Сделал: &#10;- валидацию (лайтовую)&#10;- оправку axios post запросов" />
     <MESSAGE value="&#10;&#10;&#10;&#10;Рефакторинг" />
     <MESSAGE value="&#10;&#10;&#10;Рефакторинг" />
-    <MESSAGE value="&#10;Рефактринг&#10;&#10;Рефакторинг" />
     <MESSAGE value="Рефакторинг" />
+    <MESSAGE value="&#10;Рефактринг&#10;&#10;Рефакторинг" />
     <option name="LAST_COMMIT_MESSAGE" value="&#10;Рефактринг&#10;&#10;Рефакторинг" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/AddProduct.vue</url>
+          <line>40</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/utils/LoadGoods.js</url>
+          <line>13</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

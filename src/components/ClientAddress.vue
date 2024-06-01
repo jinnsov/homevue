@@ -15,20 +15,19 @@
             <div v-for="item in schema">
                 <ErrorMessage  :name="item.name" />
             </div>
-            <pre class="agreed">{{isPostComplete ? 'Загрузка...' : '' }}</pre>
-            <pre style="color: red">{{postStatusError}}</pre>
-<!--            <p>Values</p>
-            <pre>{{ values }}</pre>-->
+            <Loading :is-posting="isPosting"></Loading>
+            <pre>{{errorMessage}}</pre>
         </Form>
     </div>
 </template>
 
 <script setup>
 import {Form, Field, ErrorMessage} from "vee-validate"
-import axios from "axios";
 import {ref} from "vue";
-const isPostComplete = ref(false)
-const postStatusError = ref(undefined)
+import {axiosPost} from "../utils/AxiosPost.js";
+import Loading from "./Loading.vue";
+const isPosting = ref(false)
+const errorMessage = ref('')
 const schema = {
     city: (value) => {
         if (value && value.trim().length) {
@@ -55,23 +54,10 @@ const schema = {
         return 'Не заполнено поле "Квартира"';
     },
 };
-function onSubmit(values) {
-   // console.log(JSON.stringify(values, null, 2));
-    axiosPost(values)
-}
-function axiosPost(values){
-    isPostComplete.value = true
-    axios.post('https://httpbin.org/post', {values}).then((response) => {
-        // handle response
-        // console.log('response: '  + JSON.stringify(response.data, null, 2))
-        isPostComplete.value = false
-        postStatusError.value = undefined
-    }).catch((reject) => {
-        postStatusError.value = reject.message
-        console.error(reject.message)
-
-    })
-
+async function onSubmit(values) {
+    isPosting.value = true
+    errorMessage.value = await axiosPost(values)
+    isPosting.value = false
 }
 </script>
 

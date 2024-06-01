@@ -3,14 +3,14 @@
         <div class="button__group">
             <p>Персональные данные получателя</p>
             <Field name="last" type="input" style="'input'" placeholder="Фамилия"/>
-            <ErrorMessage  name="last" />
+            <ErrorMessage  name="last" style="color: red"/>
             <Field name="first" type="input" style="'input'" placeholder="Имя"/>
-            <ErrorMessage  name="first" />
+            <ErrorMessage  name="first" style="color: red"/>
             <Field name="second" type="input" style="'input'" placeholder="Отчество"/>
-            <ErrorMessage  name="second" />
+            <ErrorMessage  name="second" style="color: red"/>
             <Field name="birth" type="input" style="'input'"
                    :placeholder="'Дата рождения (' + new Date('2000/01/01').toLocaleDateString().split('T')[0] +')'" />
-            <ErrorMessage  name="birth" />
+            <ErrorMessage  name="birth" style="color: red"/>
         <div class="button__group">
             <p>Реквизиты банковской карты</p>
             <Field name="num" type="input" style="'input'" placeholder="Номер (0000-0000-0000-0000)"/>
@@ -30,8 +30,8 @@
         </div>
 <!--                    <p>Values</p>
             <pre>{{ values }}</pre>-->
-        <pre class="agreed">{{isPostComplete ? 'Загрузка...' : '' }}</pre>
-        <pre style="color: red">{{postStatusError}}</pre>
+        <Loading :is-posting="isPosting"></Loading>
+        <pre>{{errorMessage}}</pre>
     </form>
 
 </template>
@@ -39,8 +39,11 @@
 <script setup>
 // https://vee-validate.logaretm.com/v4/examples/checkboxes-and-radio/
 import {Form, Field, ErrorMessage,} from "vee-validate"
-import axios from 'axios'
+import Loading from "./Loading.vue";
 import {ref} from "vue";
+import {axiosPost} from "../utils/AxiosPost.js";
+const isPosting = ref(false)
+const errorMessage = ref('')
 const schema = {
     last: (value) => {
         if (value && value.trim().length) {
@@ -80,10 +83,11 @@ const schema = {
     },
     birth: (value) => {
         const dateReg = /^\d{2}[.-]\d{2}[.-]\d{4}$/
-        if (value && value.match(dateReg)) {
-            return true;
-        }
-        return 'Не валидная Дата рождения';
+        if (! value ) return 'Введите дату рождения';
+        if ( value.match(dateReg) === null) return 'Неправильный формат даты';
+        const dateYearDiff = new Date().getFullYear() - new Date(value).getFullYear()
+        if ( dateYearDiff < 0) return 'Год рждения больше текущего';
+        return true
     },
     agreed: (value) => {
         if (!value) {
@@ -92,26 +96,10 @@ const schema = {
         return 'Подтвердите согласие на обработку персональных данных';
     },
 };
-function onSubmit(values) {
-    //alert(values.birth)
-    ///console.log(JSON.stringify(values, null, 2));
-    axiosPost()
-}
-const isPostComplete = ref(false)
-const postStatusError = ref(undefined)
-function axiosPost(values){
-   isPostComplete.value = true
-   axios.post('https://httpbin.org/post', {values}).then((response) => {
-      // handle response
-      // console.log('response: '  + JSON.stringify(response.data, null, 2))
-       isPostComplete.value = false
-       postStatusError.value = undefined
-    }).catch((reject) => {
-       postStatusError.value = reject.message
-       console.error(reject.message)
-
-   })
-
+async function onSubmit(values) {
+    isPosting.value = true
+    errorMessage.value = await axiosPost(values)
+    isPosting.value = false
 }
 </script>
 

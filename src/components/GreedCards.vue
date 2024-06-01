@@ -1,6 +1,6 @@
 <template>
     <div class="goods-section">
-        <search :data="data"  @data-filter="DataFilteredFromSearch" />
+        <search :data="goodsValues"  @data-filter="DataFilteredFromSearch" />
         <div class="cards">
             <div v-for="item in dataFiltered" :key="item.id">
                 <card
@@ -20,8 +20,8 @@ import Card from "./Card.vue";
 import Search from "./Search.vue";
 
 import {reactive} from "vue";
-import {data} from "../utils/LoadGoods.js";
-const dataFiltered = reactive([... data]);
+import {goodsValues} from "../utils/LocalGoods.js";
+const dataFiltered = reactive([... goodsValues]);
 
 function DataFilteredFromSearch (n){
     dataFiltered.length=0

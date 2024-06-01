@@ -3,10 +3,10 @@
         <div class="button__group">
             <p>Добавить товар</p>
             <Field name="title" type="input" placeholder="Заголовок"></Field>
-            <Field name="price" type="input" placeholder="Цена"></Field>
+            <Field name="price" type="input" placeholder="Цена (0.00)"></Field>
             <Field name="description" type="input" placeholder="Описание"></Field>
             <Field name="category" type="input" placeholder="Категория"></Field>
-            <Field name="image" type="input" placeholder="Изображение"></Field>
+            <Field name="image" type="input" placeholder="Изображение (URL)"></Field>
         </div>
         <div class="add-card">
             <button type="submit" class="button__add">Добавить</button>
@@ -15,18 +15,17 @@
         <div v-for="item in schema">
             <ErrorMessage  :name="item.name" />
         </div>
-<!--            <p>Values</p>
-            <pre>{{ values }}</pre>-->
-        <pre class="agreed">{{isPostComplete ? 'Загрузка...' : '' }}</pre>
-        <pre style="color: red">{{postStatusError}}</pre>
+        <Loading :is-posting="isPosting"></Loading>
+        <pre>{{errorMessage}}</pre>
     </form>
 </template>
 
 <script setup>
 // https://vee-validate.logaretm.com/v4/examples/checkboxes-and-radio/
 import {Form, Field, ErrorMessage,} from "vee-validate"
-import axios from 'axios'
 import {ref} from "vue";
+import {axiosPost} from "../utils/AxiosPost.js";
+import Loading from "./Loading.vue";
 const schema = {
     title: (value) => {
         if (value && value.trim().length) {
@@ -35,10 +34,10 @@ const schema = {
         return 'Не заполнено поле "Заголовок"';
     },
     price: (value) => {
-        if (value && value.trim().length) {
-            return true;
-        }
-        return 'Не заполнено поле "Цена"';
+        if (! value || value.trim().length === 0) {   return 'Не заполнено поле "Цена"';   }
+        if (isNaN(Number(value))) {   return 'поле "Цена" длжно бысть числом';   }
+        if (parseFloat(value) < 0) {   return '"Цена" не может быть отрицательнй ';   }
+        return true
     },
     description: (value) => {
         if (value) {
@@ -53,32 +52,18 @@ const schema = {
         return 'Не заполнено поле "Категория"';
     },
     image: (value) => {
-        if (value) {
-            return true;
-        }
-        return 'Не заполнено поле "Изображение"';
+        if (!value) { return 'Не заполнено поле "Изображение"';}
+        const  urlRegex = /^(https?|ftp):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&%$#=~_-]+))*$/;
+        if (value.match(urlRegex) === null) return 'Не валидный URL'
+        return true;
     },
 };
-function onSubmit(values) {
-    //alert(values.birth)
-    ///console.log(JSON.stringify(values, null, 2));
-    axiosPost()
-}
-const isPostComplete = ref(false)
-const postStatusError = ref(undefined)
-function axiosPost(values){
-    isPostComplete.value = true
-    axios.post('https://httpbin.org/post', {values}).then((response) => {
-        // handle response
-        // console.log('response: '  + JSON.stringify(response.data, null, 2))
-        isPostComplete.value = false
-        postStatusError.value = undefined
-    }).catch((reject) => {
-        postStatusError.value = reject.message
-        console.error(reject.message)
-
-    })
-
+const isPosting = ref(false)
+const errorMessage = ref('')
+async function onSubmit(values) {
+    isPosting.value = true
+    errorMessage.value = await axiosPost(values)
+    isPosting.value = false
 }
 </script>
 
