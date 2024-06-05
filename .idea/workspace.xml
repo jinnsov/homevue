@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="&#10;Рефактринг&#10;&#10;Рефакторинг">
-      <change afterPath="$PROJECT_DIR$/src/components/Loading.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/AxiosPost.js" afterDir="false" />
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="&#10;Рабта над ошибками">
+      <change afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CartList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/cart.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddProduct.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClientAddress.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientAddress.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClientPerson.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientPerson.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/vue.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/vue.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GreedCards.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GreedCards.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,15 +26,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lesson4" />
+        <entry key="$PROJECT_DIR$" value="lesson5" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,11 +74,11 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;lesson5&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lesson6&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.15.0&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.15.0&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Dev/vue/homevue/src/components&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Dev/vue/homevue/src/images&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -87,6 +92,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dev\vue\homevue\src\images" />
+      <recent name="D:\Dev\vue\homevue\src" />
       <recent name="D:\Dev\vue\homevue\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -128,7 +135,9 @@
       <workItem from="1716627936940" duration="59166000" />
       <workItem from="1716798073302" duration="70551000" />
       <workItem from="1717169163966" duration="20119000" />
-      <workItem from="1717226042797" duration="15308000" />
+      <workItem from="1717226042797" duration="16812000" />
+      <workItem from="1717350543269" duration="3752000" />
+      <workItem from="1717501527144" duration="13970000" />
     </task>
     <task id="LOCAL-00001" summary="start2">
       <created>1716459065339</created>
@@ -347,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716996420525</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="&#10;Рабта над ошибками">
+      <created>1717257236738</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1717257236739</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +403,8 @@
     <MESSAGE value="&#10;&#10;&#10;Рефакторинг" />
     <MESSAGE value="Рефакторинг" />
     <MESSAGE value="&#10;Рефактринг&#10;&#10;Рефакторинг" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;Рефактринг&#10;&#10;Рефакторинг" />
+    <MESSAGE value="&#10;Рабта над ошибками" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;Рабта над ошибками" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -395,13 +412,11 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/AddProduct.vue</url>
           <line>40</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/utils/LoadGoods.js</url>
           <line>13</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

@@ -1,23 +1,11 @@
 <script setup>
 import Menu from "./components/Menu.vue";
-import {shallowRef} from "vue";
-import GreedCards from "./components/GreedCards.vue";
-import ClientPerson from "./components/ClientPerson.vue";
-import ClientAddress from "./components/ClientAddress.vue";
-import AddProduct from "./components/AddProduct.vue";
-
-const sections = [GreedCards, AddProduct, ClientAddress, ClientPerson ]
-const selectedComponent = shallowRef(GreedCards)
-
-function SelectedMethod (n){
-    selectedComponent.value = sections[n]
-}
 </script>
 
 <template>
     <div class="page">
-        <Menu @section-click="SelectedMethod" class="menu"></Menu>
-        <component :is="selectedComponent" class="content"></component>
+        <Menu class="menu"></Menu>
+        <router-view></router-view>
     </div>
 </template>
 

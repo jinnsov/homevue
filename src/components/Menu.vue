@@ -1,9 +1,9 @@
 <template>
     <div class="card__prices">
-        <button class="button__add" @click="btn(0)">Товары</button>
-        <button class="button__add" @click="btn(1)">Добавить товар</button>
-        <button class="button__add" @click="btn(2)">Адрес доставки</button>
-        <button class="button__add" @click="btn(3)">Получатель</button>
+        <router-link class="button__add" :to="{name : 'cards'}">Товары</router-link>
+        <router-link class="button__add" :to="{name : 'product'}">Добавить товар</router-link>
+        <router-link class="button__add" :to="{name : 'address'}">Адрес доставки</router-link>
+        <router-link class="button__add" :to="{name : 'contacts'}">Получатель</router-link>
     </div>
 </template>
 

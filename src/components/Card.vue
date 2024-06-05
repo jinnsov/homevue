@@ -1,6 +1,6 @@
 <template>
     <!-- Карточка товара -->
-    <div class="card">
+    <div class="card" :id="id">
         <!-- Верхняя часть -->
         <div class="card__description">{{description}}</div>
         <div class="card__top">
@@ -23,12 +23,15 @@
                 {{title}}
             </a>
             <!-- Кнопка добавить в корзину -->
-            <button class="button__add">В корзину</button>
+            <button class="button__add" @click="btn(id)">В корзину</button>
         </div>
     </div>
 </template>
 
 <script setup>
+const emits =defineEmits(['product-click'])
+function btn (id) {  emits( 'product-click',id) }
+
 /*const data = defineProps({
     data: {
         type: Object,
