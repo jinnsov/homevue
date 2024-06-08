@@ -1,17 +1,14 @@
 <template>
-    <router-link   class="cart" id="cart" :to="{name : 'cart'}">
+    <router-link class="cart" id="cart" :to="{name : 'cart'}">
         <img class="cart__image" src="../images/cart.png" alt="Cart" />
-        <div class="cart__num" id="cart_num" >{{props.data}}</div>
+        <div class="cart__num" id="cart_num" >{{counter.cardsCount}}</div>
     </router-link>
 
 </template>
 
 <script setup>
-const props = defineProps(['data'])
-function load(){
-    console.log('cart^ ' + props.data);
-    return props.data
-}
+import {useCounterStore} from '../stores/productStore.js'
+const counter = useCounterStore()
 </script>
 
 <style scoped>
@@ -53,5 +50,13 @@ function load(){
     font-weight: 500;
     top: -5px;
     right: -5px;
+}
+.cart__image{
+    width: 90%; /* Ширина */
+    float: left; /* Выстраиваем элементы по горизонтали */
+    margin: 0 0 0 3.5%; /* Отступ слева */
+    //background: #f0f0f0; /* Цвет фона */
+    border-radius: 5px; /* Радиус скругления */
+    padding: 2%;
 }
 </style>

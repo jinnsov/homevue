@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="&#10;Рабта над ошибками">
-      <change afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CartList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/cart.png" afterDir="false" />
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="Дбавил роутер и корзину (макет)">
+      <change afterPath="$PROJECT_DIR$/src/components/CartItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Product.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/vue.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/vue.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GreedCards.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GreedCards.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
@@ -26,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -97,6 +96,7 @@
       <recent name="D:\Dev\vue\homevue\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dev\vue\homevue\src\stores" />
       <recent name="D:\Dev\vue\homevue\src\utils" />
       <recent name="D:\Dev\vue\homevue\src\components" />
     </key>
@@ -137,7 +137,8 @@
       <workItem from="1717169163966" duration="20119000" />
       <workItem from="1717226042797" duration="16812000" />
       <workItem from="1717350543269" duration="3752000" />
-      <workItem from="1717501527144" duration="13970000" />
+      <workItem from="1717501527144" duration="40546000" />
+      <workItem from="1717853935456" duration="2116000" />
     </task>
     <task id="LOCAL-00001" summary="start2">
       <created>1716459065339</created>
@@ -363,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717257236739</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Дбавил роутер и корзину (макет)">
+      <created>1717566111393</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1717566111393</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +412,8 @@
     <MESSAGE value="Рефакторинг" />
     <MESSAGE value="&#10;Рефактринг&#10;&#10;Рефакторинг" />
     <MESSAGE value="&#10;Рабта над ошибками" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;Рабта над ошибками" />
+    <MESSAGE value="Дбавил роутер и корзину (макет)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Дбавил роутер и корзину (макет)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -413,11 +422,6 @@
           <url>file://$PROJECT_DIR$/src/components/AddProduct.vue</url>
           <line>40</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/utils/LoadGoods.js</url>
-          <line>13</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

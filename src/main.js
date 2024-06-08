@@ -6,6 +6,10 @@ import GreedCards from "./components/GreedCards.vue";
 import ClientPerson from "./components/ClientPerson.vue";
 import ClientAddress from "./components/ClientAddress.vue";
 import CartList from "./components/CartList.vue";
+import { createPinia } from "pinia";
+
+const pinia = createPinia()
+
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
@@ -46,4 +50,5 @@ const router = createRouter({
 })
 createApp(App)
     .use(router)
+    .use(pinia)
     .mount('#app')

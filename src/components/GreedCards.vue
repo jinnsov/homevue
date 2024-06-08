@@ -1,16 +1,11 @@
 <template>
-    <cart :data="select"></cart>
+
     <div class="goods-section">
         <search :data="goodsValues"  @data-filter="DataFilteredFromSearch" />
         <div class="cards">
             <div v-for="item in dataFiltered" :key="item.id">
                 <card @product-click="selected"
-                        :id = "item.id"
-                        :price = "item.price"
-                        :title = "item.title"
-                        :image = "item.image"
-                        :rating = "item.rating"
-                        :description="item.description"
+                      :item = "item"
                 ></card>
             </div>
         </div>
@@ -28,7 +23,7 @@ const dataFiltered = reactive([... goodsValues]);
 const select = ref(0);
 function selected(value){
     console.log('selected' + value);
-    select.value = value;
+    select.value += 1;
 }
 function DataFilteredFromSearch (n){
     dataFiltered.length=0

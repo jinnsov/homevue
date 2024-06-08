@@ -1,36 +1,40 @@
 <template>
     <!-- Карточка товара -->
-    <div class="card" :id="id">
+    <div class="card" :id="item['id']">
         <!-- Верхняя часть -->
-        <div class="card__description">{{description}}</div>
+        <div class="card__description">{{item['description']}}</div>
         <div class="card__top">
             <!-- Изображение-ссылка товара -->
             <a href="#" class="card__image">
-                <img :src="image" :alt="category" />
+                <img :src="item['image']" :alt="item['category']" />
             </a>
             <!-- Рэйтинг на товар -->
-            <div class="card__label">{{rating.rate}}</div>
+            <div class="card__label">{{item['rating'].rate}}</div>
         </div>
         <!-- Нижняя часть -->
         <div class="menu__bottom">
             <!-- Цены на товар (с учетом скидки и без)-->
             <div class="card__prices">
-                <div class="card__price card__price--cost">{{price}}</div>
-                <div class="card__price card__price--count">{{rating.count}}</div>
+                <div class="card__price card__price--cost">{{item['price']}}</div>
+                <div class="card__price card__price--count">{{item['rating'].count}}</div>
             </div>
             <!-- Ссылка-название товара -->
             <a href="#" class="card__title">
-                {{title}}
+                {{item['title']}}
             </a>
             <!-- Кнопка добавить в корзину -->
-            <button class="button__add" @click="btn(id)">В корзину</button>
+            <button class="button__add" @click="btn(item)">В корзину</button>
         </div>
     </div>
 </template>
 
 <script setup>
-const emits =defineEmits(['product-click'])
-function btn (id) {  emits( 'product-click',id) }
+import {useCounterStore} from '../stores/productStore.js'
+function btn (item) {
+    counter.addCard(item)
+}
+
+
 
 /*const data = defineProps({
     data: {
@@ -51,21 +55,45 @@ function btn (id) {  emits( 'product-click',id) }
         }
     },
 });*/
+/*defineProps({
+    item: {
+        type: Object,
+        default() {
+            return {
+                id: Number,
+                title: String,
+                price: Number,
+                description: String,
+                category: String,
+                image: String,
+                type: Object,
+                rating: {
+                    rate: 0,
+                    count: 0
+                }
+            }
+        }
+    }
+})*/
 defineProps(
-    {id: Number,
-    title: String,
-    price: Number,
-    description: String,
-    category: String,
-    image: String,
-    rating: Object ,default:{
-            rating: {
-                rate:0,
-                count:0
+    {
+        item: Object, default: {
+            id: Number,
+            title: String,
+            price: Number,
+            description: String,
+            category: String,
+            image: String,
+            rating: Object, default: {
+                rating: {
+                    rate: 0,
+                    count: 0
+                }
             }
         }
     },
 )
+const counter = useCounterStore()
 </script>
 
 <style scoped>

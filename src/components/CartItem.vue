@@ -1,37 +1,34 @@
 <template>
-    <div class="">
-        <div class="popup__container" id="popup_container">
-            <div class="popup__item">
-                <h1 class="popup__title">Оформление заказа</h1>
+    <div class="popup__item" id="popup_product_list">
+        <div class="popup__product" v-for="item in counter.cards" :key="item.id">
+            <div class="popup__product-wrap">
+                <img
+                        :src="item.image"
+                        :alt="item.categories"
+                        class="popup__product-image"
+                />
+                <h2 class="popup__product-title">
+                    {{item.title}}
+                </h2>
             </div>
-            <cart-item ></cart-item>
-            <div class="popup__item">
-                <div class="popup__cost">
-                    <h2 class="popup__cost-title">Итого</h2>
-                    <output class="popup__cost-value" id="popup_cost">{{ counter.sum }}</output>
-                </div>
-<!--                <div class="popup__cost">
-                    <h2 class="popup__cost-title">Скидка</h2>
-                    <output class="popup__cost-value" id="popup_discount">15000</output>
-                </div>
-                <div class="popup__cost">
-                    <h2 class="popup__cost-title">Итого со скидкой</h2>
-                    <output class="popup__cost-value" id="popup_cost_discount"
-                    >{{ counter.sum }}.</output
-                    >
-                </div>-->
+            <div class="popup__product-wrap">
+                <div class="popup__product-price">{{ item.price }}</div>
+                <button class="popup__product-delete" @click="deleteItem(item)">✖</button>
             </div>
-            <button class="popup__close" id="popup_close" @click="$router.go(-1)">✖</button>
         </div>
     </div>
+
 </template>
 
 <script setup>
-import CartItem from "./CartItem.vue";
 import {useCounterStore} from '../stores/productStore.js'
 const counter = useCounterStore()
-</script>
 
+function deleteItem (item) {
+    counter.removeCard(item)
+}
+
+</script>
 <style scoped>
 .popup {
     position: fixed;

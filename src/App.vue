@@ -1,9 +1,11 @@
 <script setup>
 import Menu from "./components/Menu.vue";
+import Cart from "./components/Cart.vue";
 </script>
 
 <template>
     <div class="page">
+        <cart></cart>
         <Menu class="menu"></Menu>
         <router-view></router-view>
     </div>
