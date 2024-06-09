@@ -1,29 +1,26 @@
 <template>
     <!-- Карточка товара -->
-    <div class="card" :id="item['id']">
+    <div class="card" :id="item.id">
         <!-- Верхняя часть -->
-        <div class="card__description">{{item['description']}}</div>
         <div class="card__top">
             <!-- Изображение-ссылка товара -->
-            <a href="#" class="card__image">
-                <img :src="item['image']" :alt="item['category']" />
+            <a  class="card__image">
+                <img :src="item['image']" :alt="item.category" />
             </a>
             <!-- Рэйтинг на товар -->
-            <div class="card__label">{{item['rating'].rate}}</div>
+            <div class="card__label">{{item.rating['rate']}}</div>
         </div>
         <!-- Нижняя часть -->
         <div class="menu__bottom">
             <!-- Цены на товар (с учетом скидки и без)-->
             <div class="card__prices">
-                <div class="card__price card__price--cost">{{item['price']}}</div>
-                <div class="card__price card__price--count">{{item['rating'].count}}</div>
+                <div class="card__price card__price--cost">{{item.price}}</div>
+                <div class="card__price card__price--count">{{item.rating['count']}}</div>
             </div>
             <!-- Ссылка-название товара -->
-            <a href="#" class="card__title">
-                {{item['title']}}
-            </a>
+            <router-link class="card__title"  @click="select(item)" :to="{name : 'prod'}">{{item['title']}}</router-link>
             <!-- Кнопка добавить в корзину -->
-            <button class="button__add" @click="btn(item)">В корзину</button>
+            <button class="button__add" @click="btn(item)">Добавить в корзину</button>
         </div>
     </div>
 </template>
@@ -33,7 +30,10 @@ import {useCounterStore} from '../stores/productStore.js'
 function btn (item) {
     counter.addCard(item)
 }
-
+function select (item) {
+    counter.selectCard(item)
+    //$router.push({ path: '/prod' })
+}
 
 
 /*const data = defineProps({

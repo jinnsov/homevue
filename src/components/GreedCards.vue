@@ -1,12 +1,9 @@
 <template>
-
     <div class="goods-section">
         <search :data="goodsValues"  @data-filter="DataFilteredFromSearch" />
         <div class="cards">
             <div v-for="item in dataFiltered" :key="item.id">
-                <card @product-click="selected"
-                      :item = "item"
-                ></card>
+                <card :item = "item"></card>
             </div>
         </div>
     </div>
@@ -18,17 +15,11 @@ import Search from "./Search.vue";
 
 import {reactive, ref} from "vue";
 import {goodsValues} from "../utils/LocalGoods.js";
-import Cart from "./Cart.vue";
+import Cart from "./Cart/CartButton.vue";
 const dataFiltered = reactive([... goodsValues]);
-const select = ref(0);
-function selected(value){
-    console.log('selected' + value);
-    select.value += 1;
-}
 function DataFilteredFromSearch (n){
     dataFiltered.length=0
     dataFiltered.push(...n);
-    //console.log('parent: ' + dataFiltered.length)
 }
 </script>
 

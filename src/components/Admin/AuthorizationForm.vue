@@ -2,11 +2,9 @@
     <div id="app">
         <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
             <div class="button__group">
-                <p>Адрес доставки</p>
-                <Field name="city" type="input" style="'input'" placeholder="Город"/>
-                <Field name="street" type="input" style="'input'" placeholder="Улица"/>
-                <Field name="house" type="input" style="'input'" placeholder="Дом"/>
-                <Field name="flat" type="input" style="'input'" placeholder="Квартира"/>
+                <p>Авторизация</p>
+                <Field name="login" type="input" style="'input'" placeholder="login"/>
+                <Field name="password" type="input" style="'input'" placeholder="password"/>
             </div>
             <div class="add-card">
                 <button type="submit" class="button__add">Добавить</button>
@@ -17,47 +15,68 @@
             </div>
             <Loading :is-posting="isPosting"></Loading>
             <pre>{{errorMessage}}</pre>
+            <div>
+                <input type="text" v-model="inputValue" placeholder="Enter value" />
+                <div>
+                    <button @click="setLocalStorageContent">Set local storage</button>
+                    <button @click="removeLocalStorageContent">Remove local storage</button>
+                </div>
+                <div style="margin-top: 20px">
+                    <button @click="showLocalStorageContent">Show local storage content</button>
+                    <p>
+                        Value of 'item' is {{ localStorageValue  }}
+                    </p>
+                </div>
+            </div>
         </Form>
     </div>
 </template>
 
 <script setup>
 import {Form, Field, ErrorMessage} from "vee-validate"
-import {ref} from "vue";
-import {axiosPost} from "../utils/AxiosPost.js";
-import Loading from "./Loading.vue";
+import {ref, onMounted} from "vue";
+import {axiosPost} from "../../utils/AxiosPost.js";
+import Loading from "../Loading.vue";
 const isPosting = ref(false)
 const errorMessage = ref('')
 const schema = {
-    city: (value) => {
+    login: (value) => {
         if (value && value.trim().length) {
             return true;
         }
-        return 'Не заполнено поле "Город"';
+        return 'Не заполнено поле "Логин"';
     },
-    street: (value) => {
+    password: (value) => {
         if (value && value.trim().length) {
             return true;
         }
-        return 'Не заполнено поле "Улица"';
-    },
-    house: (value) => {
-        if (value && value.trim().length) {
-            return true;
-        }
-        return 'Не заполнено поле "Дом"';
-    },
-    flat: (value) => {
-        if (value && value.trim().length) {
-            return true;
-        }
-        return 'Не заполнено поле "Квартира"';
+        return 'Не заполнено поле "Пароль"';
     },
 };
 async function onSubmit(values) {
     isPosting.value = true
     errorMessage.value = await axiosPost(values)
+    localStorage.setItem('login', values.login)
     isPosting.value = false
+}
+
+const inputValue = ref('')
+const localStorageValue = ref('')
+
+onMounted(() => {
+    showLocalStorageContent()
+})
+
+const setLocalStorageContent = () => {
+    localStorage.setItem('item', inputValue.value)
+}
+
+const showLocalStorageContent = () => {
+    localStorageValue.value = localStorage.getItem('login')
+}
+
+const removeLocalStorageContent = () => {
+    localStorageValue.value = localStorage.removeItem('item')
 }
 </script>
 

@@ -1,13 +1,12 @@
 <template>
     <router-link class="cart" id="cart" :to="{name : 'cart'}">
-        <img class="cart__image" src="../images/cart.png" alt="Cart" />
+        <img class="cart__image" src="../../images/cart.png" alt="Cart" />
         <div class="cart__num" id="cart_num" >{{counter.cardsCount}}</div>
     </router-link>
-
 </template>
 
 <script setup>
-import {useCounterStore} from '../stores/productStore.js'
+import {useCounterStore} from '../../stores/productStore.js'
 const counter = useCounterStore()
 </script>
 

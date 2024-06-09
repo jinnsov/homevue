@@ -24,8 +24,8 @@
 // https://vee-validate.logaretm.com/v4/examples/checkboxes-and-radio/
 import {Form, Field, ErrorMessage,} from "vee-validate"
 import {ref} from "vue";
-import {axiosPost} from "../utils/AxiosPost.js";
-import Loading from "./Loading.vue";
+import {axiosPost} from "../../utils/AxiosPost.js";
+import Loading from "../Loading.vue";
 const schema = {
     title: (value) => {
         if (value && value.trim().length) {

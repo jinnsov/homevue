@@ -3,10 +3,14 @@ import './style.css'
 import App from './App.vue'
 import {createRouter, createWebHistory} from "vue-router";
 import GreedCards from "./components/GreedCards.vue";
-import ClientPerson from "./components/ClientPerson.vue";
-import ClientAddress from "./components/ClientAddress.vue";
-import CartList from "./components/CartList.vue";
+import ClientPerson from "./components/Client/ClientPerson.vue";
+import ClientAddress from "./components/Client/ClientAddress.vue";
+import CartList from "./components/Cart/CartList.vue";
 import { createPinia } from "pinia";
+import Card from "./components/Card.vue";
+import Product from "./components/Product.vue";
+import Authorization from "./components/Admin/AuthorizationButton.vue";
+import AuthorizationForm from "./components/Admin/AuthorizationForm.vue";
 
 const pinia = createPinia()
 
@@ -25,7 +29,7 @@ const router = createRouter({
             // route level code-splitting
             // this generates a separate chunk (About.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
-            component: () => import('../src/components/AddProduct.vue')
+            component: () => import('./components/Admin/AddProduct.vue')
         },
         {
             path: '/contacts',
@@ -44,6 +48,18 @@ const router = createRouter({
             name: 'cart',
             component: CartList,
             alias: '/cart'
+        },
+        {
+            path: '/prod',
+            name: 'prod',
+            component: Product,
+            alias: '/p'
+        },
+        {
+            path: '/authorization',
+            name: 'authorization',
+            component: AuthorizationForm,
+            alias: '/login'
         }
     ],
     scrollBehavior: () => ({ top: 0 })

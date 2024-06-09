@@ -1,19 +1,21 @@
 <template>
     <div class="popup__item" id="popup_product_list">
-        <div class="popup__product" v-for="item in counter.cards" :key="item.id">
+        <div class="popup__product" v-for="item in new Set(counter.cards)" :key="item.id">
             <div class="popup__product-wrap">
                 <img
                         :src="item.image"
                         :alt="item.categories"
                         class="popup__product-image"
                 />
-                <h2 class="popup__product-title">
-                    {{item.title}}
-                </h2>
+                <!-- Ссылка-название товара -->
+                <router-link class="card__title"  @click="select(item)" :to="{name : 'prod'}">{{item['title']}}</router-link>
             </div>
             <div class="popup__product-wrap">
-                <div class="popup__product-price">{{ item.price }}</div>
-                <button class="popup__product-delete" @click="deleteItem(item)">✖</button>
+                <div class="popup__product-price">{{ `${item.price}₽` }}</div>
+
+                <div class="popup__product-price">{{ item.inCartCount }}</div>
+                <button type="submit" class="popup__product-delete" @click="addItem(item)">+</button>
+                <button type="submit" class="popup__product-delete" @click="deleteItem(item)">-</button>
             </div>
         </div>
     </div>
@@ -21,13 +23,19 @@
 </template>
 
 <script setup>
-import {useCounterStore} from '../stores/productStore.js'
+import {useCounterStore} from '../../stores/productStore.js'
 const counter = useCounterStore()
 
 function deleteItem (item) {
     counter.removeCard(item)
 }
-
+function addItem (item) {
+    counter.addCard(item)
+}
+function select (item) {
+    counter.selectCard(item)
+    //$router.push({ path: '/prod' })
+}
 </script>
 <style scoped>
 .popup {
@@ -100,15 +108,17 @@ function deleteItem (item) {
 
 .popup__product-price {
     font-size: 18px;
-    margin-right: 15px;
+    margin: 15px;
 }
 
 /* Стили для кнопки удаления товара */
 .popup__product-delete {
     font-size: 12px;
     padding: 5px;
+    margin: 2px;
     cursor: pointer;
     color: #d62240;
+    background: bisque;
 }
 
 /* Стили для вывода стоимости товаров */
@@ -147,5 +157,16 @@ function deleteItem (item) {
 
 .popup--open {
     display: flex;
+}
+.card__title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    color: #414141;
+}
+.card__title:hover {
+    color: #ff6633;
 }
 </style>

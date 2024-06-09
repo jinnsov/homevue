@@ -39,9 +39,9 @@
 <script setup>
 // https://vee-validate.logaretm.com/v4/examples/checkboxes-and-radio/
 import {Form, Field, ErrorMessage,} from "vee-validate"
-import Loading from "./Loading.vue";
+import Loading from "../Loading.vue";
 import {ref} from "vue";
-import {axiosPost} from "../utils/AxiosPost.js";
+import {axiosPost} from "../../utils/AxiosPost.js";
 const isPosting = ref(false)
 const errorMessage = ref('')
 const schema = {

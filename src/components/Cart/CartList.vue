@@ -4,31 +4,25 @@
             <div class="popup__item">
                 <h1 class="popup__title">Оформление заказа</h1>
             </div>
-            <cart-item ></cart-item>
+            <cart-item v-if="counter.cards.length >0"></cart-item>
+            <h3 v-else>Корзина пуста</h3>
             <div class="popup__item">
                 <div class="popup__cost">
-                    <h2 class="popup__cost-title">Итого</h2>
-                    <output class="popup__cost-value" id="popup_cost">{{ counter.sum }}</output>
-                </div>
-<!--                <div class="popup__cost">
-                    <h2 class="popup__cost-title">Скидка</h2>
-                    <output class="popup__cost-value" id="popup_discount">15000</output>
+                    <h4 class="popup__cost-title">Итого</h4>
+                    <output class="popup__cost-value" id="popup_cost">{{ counter.sum.toFixed(2) }}</output>
                 </div>
                 <div class="popup__cost">
-                    <h2 class="popup__cost-title">Итого со скидкой</h2>
-                    <output class="popup__cost-value" id="popup_cost_discount"
-                    >{{ counter.sum }}.</output
-                    >
-                </div>-->
+                    <button type="button" class="popup__product-delete" @click="counter.removeAllCard">Очистить карзину</button>
+                </div>
             </div>
-            <button class="popup__close" id="popup_close" @click="$router.go(-1)">✖</button>
+            <button class="popup__close" id="popup__item" @click="$router.go(-1)">✖</button>
         </div>
     </div>
 </template>
 
 <script setup>
 import CartItem from "./CartItem.vue";
-import {useCounterStore} from '../stores/productStore.js'
+import {useCounterStore} from '../../stores/productStore.js'
 const counter = useCounterStore()
 </script>
 
@@ -56,6 +50,7 @@ const counter = useCounterStore()
     width: 100%;
     max-width: 800px;
     min-height: 300px;
+    min-width: 350px;
     background-color: #fff;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
@@ -150,5 +145,30 @@ const counter = useCounterStore()
 
 .popup--open {
     display: flex;
+}
+.card__price--count {
+    font-weight: 200;
+    font-size: 19px;
+    color: #414141;
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.card__price--count::before {
+    content: "Осталось";
+    font-weight: 100;
+    font-size: 13px;
+    color: #bfbfbf;
+    margin-right: 3px;
+}
+
+.card__price--cost {
+    font-weight: 400;
+    font-size: 17px;
+    color: #606060;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+
 }
 </style>
