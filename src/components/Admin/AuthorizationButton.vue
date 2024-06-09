@@ -1,13 +1,20 @@
 <template>
     <router-link class="cart__num" id="cart" :to="{name : 'authorization'}">
-        <p class="" id="cart_num" >Авторизоваться</p>
-        <div class="" id="cart_num" >{{counter.cardsCount}}</div>
+        <p class="" id="cart_num" v-if="counter.login !== '' ">{{ counter.login  }}</p>
+        <p class="" id="cart_num"  v-else>Учётная запись</p>
     </router-link>
 </template>
 
 <script setup>
 import {useCounterStore} from '../../stores/productStore.js'
+import {onMounted, ref} from "vue";
 const counter = useCounterStore()
+const localStorageValue = ref('')
+
+onMounted(() => {
+    console.log(localStorageValue.value);
+    counter.setLogin(localStorage.getItem('login'))
+})
 </script>
 
 <style scoped>
@@ -35,13 +42,5 @@ const counter = useCounterStore()
     right: 5px;
 
 
-}
-.cart__image{
-    width: 90%; /* Ширина */
-    float: left; /* Выстраиваем элементы по горизонтали */
-    margin: 0 0 0 3.5%; /* Отступ слева */
-//background: #f0f0f0; /* Цвет фона */
-    border-radius: 5px; /* Радиус скругления */
-    padding: 2%;
 }
 </style>

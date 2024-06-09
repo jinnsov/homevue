@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" v-if="counter.login === '' ">
         <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
             <div class="button__group">
                 <p>Авторизация</p>
@@ -15,24 +15,21 @@
             </div>
             <Loading :is-posting="isPosting"></Loading>
             <pre>{{errorMessage}}</pre>
-            <div>
-                <input type="text" v-model="inputValue" placeholder="Enter value" />
-                <div>
-                    <button @click="setLocalStorageContent">Set local storage</button>
-                    <button @click="removeLocalStorageContent">Remove local storage</button>
-                </div>
-                <div style="margin-top: 20px">
-                    <button @click="showLocalStorageContent">Show local storage content</button>
-                    <p>
-                        Value of 'item' is {{ localStorageValue  }}
-                    </p>
-                </div>
-            </div>
         </Form>
+    </div>
+    <div v-else>
+        <div>
+            <div class="button__group">
+                <p>Выполнен вход в аккаунт</p>
+                <h3 style="color: darkblue">{{counter.login}}</h3>
+                <button class="button__add" @click="removeLocalStorageContent">Выйти</button>
+            </div>
+        </div>
     </div>
 </template>
 
 <script setup>
+import   {useCounterStore} from '../../stores/productStore.js'
 import {Form, Field, ErrorMessage} from "vee-validate"
 import {ref, onMounted} from "vue";
 import {axiosPost} from "../../utils/AxiosPost.js";
@@ -57,9 +54,10 @@ async function onSubmit(values) {
     isPosting.value = true
     errorMessage.value = await axiosPost(values)
     localStorage.setItem('login', values.login)
+    counter.setLogin(values.login)
     isPosting.value = false
 }
-
+const counter = useCounterStore()
 const inputValue = ref('')
 const localStorageValue = ref('')
 
@@ -67,16 +65,8 @@ onMounted(() => {
     showLocalStorageContent()
 })
 
-const setLocalStorageContent = () => {
-    localStorage.setItem('item', inputValue.value)
-}
-
 const showLocalStorageContent = () => {
     localStorageValue.value = localStorage.getItem('login')
-}
-
-const removeLocalStorageContent = () => {
-    localStorageValue.value = localStorage.removeItem('item')
 }
 </script>
 
@@ -139,16 +129,5 @@ input {
     cursor: pointer; /* Меняем курсор при наведении */
     margin-top: auto; /* Прижимаем кнопку к низу карточки */
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-}
-.card__label {
-    padding: 4px 8px;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background: #ff6633;
-    border-radius: 4px;
-    font-weight: 400;
-    font-size: 16px;
-    color: #fff;
 }
 </style>

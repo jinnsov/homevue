@@ -1,10 +1,12 @@
 <script setup>
 import Menu from "./components/Menu.vue";
-import Cart from "./components/Cart.vue";
+import Cart from "./components/Cart/CartButton.vue";
+import Authorization from "./components/Admin/AuthorizationButton.vue";
 </script>
 
 <template>
     <div class="page">
+        <authorization></authorization>
         <cart></cart>
         <Menu class="menu"></Menu>
         <router-view></router-view>
@@ -12,18 +14,6 @@ import Cart from "./components/Cart.vue";
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
 html, body {
 margin: 0;
     padding: 0;
