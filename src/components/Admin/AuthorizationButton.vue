@@ -1,19 +1,18 @@
 <template>
-    <router-link class="cart__num" id="cart" :to="{name : 'authorization'}">
-        <p class="" id="cart_num" v-if="counter.login !== '' ">{{ counter.login  }}</p>
+    <router-link class=" cart__num"  id="cart" :to="{name : 'authorization'}">
+        <p class="" id="cart_num" v-if="counter.login">{{ counter.login }}</p>
         <p class="" id="cart_num"  v-else>Учётная запись</p>
     </router-link>
 </template>
 
 <script setup>
 import {useCounterStore} from '../../stores/productStore.js'
-import {onMounted, ref} from "vue";
+import {onMounted} from "vue";
 const counter = useCounterStore()
-const localStorageValue = ref('')
-
 onMounted(() => {
-    console.log(localStorageValue.value);
-    counter.setLogin(localStorage.getItem('login'))
+    const ls = localStorage.getItem('login')
+    console.log('login: ' + counter.login)
+    if (ls) counter.setLogin(ls)
 })
 </script>
 

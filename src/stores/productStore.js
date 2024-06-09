@@ -16,7 +16,7 @@ export const useCounterStore = defineStore('counter' ,{
                             count:0
                         }
                     },
-            login: 'Не авторизован',
+            login: undefined
                 }
     },
     actions: {

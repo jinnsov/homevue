@@ -1,7 +1,7 @@
 <template>
     <div class="card__prices">
         <router-link class="button__add" :to="{name : 'cards'}">Товары</router-link>
-        <router-link class="button__add" :to="{name : 'product'}">Добавить товар</router-link>
+        <router-link class="button__add" :to="{name : 'product'}" v-if="counter.login">Добавить товар</router-link>
         <router-link class="button__add" :to="{name : 'address'}">Адрес доставки</router-link>
         <router-link class="button__add" :to="{name : 'contacts'}">Получатель</router-link>
     </div>
@@ -9,6 +9,8 @@
 
 <script setup>
 const emits =defineEmits(['section-click'])
+import   {useCounterStore} from '../stores/productStore.js'
+const counter = useCounterStore()
 function btn (n){  emits( 'section-click',n) }
 </script>
 

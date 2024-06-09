@@ -1,4 +1,4 @@
-import {computed, createApp, reactive, ref} from 'vue'
+import { createApp, } from 'vue'
 import './style.css'
 import App from './App.vue'
 import {createRouter, createWebHistory} from "vue-router";
@@ -7,9 +7,7 @@ import ClientPerson from "./components/Client/ClientPerson.vue";
 import ClientAddress from "./components/Client/ClientAddress.vue";
 import CartList from "./components/Cart/CartList.vue";
 import { createPinia } from "pinia";
-import Card from "./components/Card.vue";
 import Product from "./components/Product.vue";
-import Authorization from "./components/Admin/AuthorizationButton.vue";
 import AuthorizationForm from "./components/Admin/AuthorizationForm.vue";
 
 const pinia = createPinia()
@@ -18,10 +16,10 @@ const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
-            path: '/home',
+            path: '/',
             name: 'cards',
             component: GreedCards,
-            alias: '/h'
+            alias: '/home'
         },
         {
             path: '/add',

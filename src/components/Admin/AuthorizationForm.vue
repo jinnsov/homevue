@@ -1,5 +1,5 @@
 <template>
-    <div id="app" v-if="counter.login === '' ">
+    <div id="app" v-if="!counter.login">
         <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
             <div class="button__group">
                 <p>Авторизация</p>
@@ -65,8 +65,17 @@ onMounted(() => {
     showLocalStorageContent()
 })
 
+const setLocalStorageContent = () => {
+    localStorage.setItem('item', inputValue.value)
+}
+
 const showLocalStorageContent = () => {
     localStorageValue.value = localStorage.getItem('login')
+}
+
+const removeLocalStorageContent = () => {
+    localStorageValue.value = localStorage.removeItem('login')
+    counter.setLogin('')
 }
 </script>
 
@@ -129,5 +138,16 @@ input {
     cursor: pointer; /* Меняем курсор при наведении */
     margin-top: auto; /* Прижимаем кнопку к низу карточки */
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card__label {
+    padding: 4px 8px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #ff6633;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
 }
 </style>
