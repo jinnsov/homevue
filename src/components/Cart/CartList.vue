@@ -12,7 +12,7 @@
                     <output class="popup__cost-value" id="popup_cost">{{ counter.sum.toFixed(2) }}</output>
                 </div>
                 <div class="popup__cost">
-                    <button type="button" class="popup__product-delete" @click="counter.removeAllCard">Очистить карзину</button>
+                    <button type="button" class="popup__product-delete" @click="counter.removeAllCard">Очистить корзину</button>
                 </div>
             </div>
             <button class="popup__close" id="popup__item" @click="$router.go(-1)">✖</button>
