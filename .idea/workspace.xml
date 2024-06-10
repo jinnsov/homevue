@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="Рефакторинг">
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="Рефакторинг + редирект в /add после авторизации">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Admin/AuthorizationButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AuthorizationButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/AuthorizationForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AuthorizationForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cart/CartItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/CartItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cart/CartList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/CartList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Product.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +37,11 @@
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
         <option name="originalMessage" value="Рефакторинг" />
-        <option name="rewordedMessage" value="Рефакторинг" />
+        <option name="rewordedMessage" value="Рефакторинг + редирект в /add после авторизации" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="492122dc4ffeb3d3a18da0948cfced9abfb072b5" />
+    <option name="onto" value="f91933231e75afe1027ae0554af982966c729358" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
@@ -139,7 +133,7 @@
       <workItem from="1717501527144" duration="40546000" />
       <workItem from="1717853935456" duration="27062000" />
       <workItem from="1717924709401" duration="35245000" />
-      <workItem from="1718035490225" duration="3618000" />
+      <workItem from="1718035490225" duration="5401000" />
     </task>
     <task id="LOCAL-00001" summary="start2">
       <created>1716459065339</created>
@@ -442,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718037587871</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Рефакторинг + редирект в /add после авторизации">
+      <created>1718039757540</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1718039757540</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,7 +461,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="формирую v-for" />
     <MESSAGE value="реализовал v-for" />
     <MESSAGE value="попытка добавить props" />
     <MESSAGE value="реализвал пропс в app.vue" />
@@ -485,7 +485,8 @@
     <MESSAGE value="Дбавил авторизацию на localStorage + pinia" />
     <MESSAGE value="Поправил логику авторизации" />
     <MESSAGE value="Рефакторинг" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг" />
+    <MESSAGE value="Рефакторинг + редирект в /add после авторизации" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг + редирект в /add после авторизации" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
