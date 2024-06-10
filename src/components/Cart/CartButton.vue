@@ -6,8 +6,8 @@
 </template>
 
 <script setup>
-import {useCounterStore} from '../../stores/productStore.js'
-const counter = useCounterStore()
+import {useMyStore} from '../../stores/productStore.js'
+const counter = useMyStore()
 </script>
 
 <style scoped>

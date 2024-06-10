@@ -26,9 +26,9 @@
         </div>
     </template>
 <script setup>
-import {useCounterStore} from '../stores/productStore.js'
+import {useMyStore} from '../stores/productStore.js'
 
-const store = useCounterStore()
+const store = useMyStore()
 function btn (item) {
     store.addCard(item)
 }
@@ -80,17 +80,7 @@ function btn (item) {
 }
 
 /* Размещаем скидку на товар относительно изображения */
-.card__label {
-    padding: 4px 8px;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background: #ff6633;
-    border-radius: 4px;
-    font-weight: 400;
-    font-size: 16px;
-    color: #fff;
-}.card__description {
+.card__description {
      background: #ffffff;
      border-radius: 4px;
      font-weight: 400;

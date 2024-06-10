@@ -22,26 +22,11 @@
 
 <script setup>
 import CartItem from "./CartItem.vue";
-import {useCounterStore} from '../../stores/productStore.js'
-const counter = useCounterStore()
+import {useMyStore} from '../../stores/productStore.js'
+const counter = useMyStore()
 </script>
 
 <style scoped>
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.33); /* Небольшое затемнение на фоне */
-    z-index: 1000; /* Поверх всех окон */
-    width: 100%;
-    height: 100%;
-    display: none; /* По умолчанию скрываем окно */
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    overflow-y: scroll;
-}
-
 /* Стилизация контейнера окна */
 .popup__container {
     display: flex;
@@ -70,37 +55,6 @@ const counter = useCounterStore()
 .popup__title {
     font-size: 20px;
 }
-
-/* Стили для вывода товара */
-.popup__product {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.popup__product-wrap {
-    display: flex;
-    align-items: center;
-}
-
-.popup__product-image {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    margin-right: 10px;
-}
-
-.popup__product-title {
-    max-width: 300px;
-    font-weight: 500;
-}
-
-.popup__product-price {
-    font-size: 18px;
-    margin-right: 15px;
-}
-
 /* Стили для кнопки удаления товара */
 .popup__product-delete {
     font-size: 12px;
@@ -141,34 +95,5 @@ const counter = useCounterStore()
 
 .popup__close:hover {
     color: rgb(54, 67, 100);
-}
-
-.popup--open {
-    display: flex;
-}
-.card__price--count {
-    font-weight: 200;
-    font-size: 19px;
-    color: #414141;
-    display: flex;
-    flex-wrap: wrap-reverse;
-}
-
-.card__price--count::before {
-    content: "Осталось";
-    font-weight: 100;
-    font-size: 13px;
-    color: #bfbfbf;
-    margin-right: 3px;
-}
-
-.card__price--cost {
-    font-weight: 400;
-    font-size: 17px;
-    color: #606060;
-    display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: flex-end;
-
 }
 </style>

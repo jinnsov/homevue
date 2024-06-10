@@ -1,5 +1,5 @@
 import {defineStore} from "pinia";
-export const useCounterStore = defineStore('counter' ,{
+export const useMyStore = defineStore('counter' ,{
     state: () =>  {
         return {
             cards: [],

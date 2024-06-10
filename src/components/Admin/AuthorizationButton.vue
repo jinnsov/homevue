@@ -6,9 +6,9 @@
 </template>
 
 <script setup>
-import {useCounterStore} from '../../stores/productStore.js'
+import {useMyStore} from '../../stores/productStore.js'
 import {onMounted} from "vue";
-const counter = useCounterStore()
+const counter = useMyStore()
 onMounted(() => {
     const ls = localStorage.getItem('login')
     console.log('login: ' + counter.login)
@@ -17,12 +17,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
-
-/* Увеличиваем кнопку при наведении на нее */
-.cart:hover {
-    transform: scale(1.1);
-}
 
 /* Стилизуем счетчик товаров */
 .cart__num {

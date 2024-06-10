@@ -26,12 +26,12 @@
 </template>
 
 <script setup>
-import {useCounterStore} from '../stores/productStore.js'
+import {useMyStore} from '../stores/productStore.js'
 function btn (item) {
-    counter.addCard(item)
+    store.addCard(item)
 }
 function select (item) {
-    counter.selectCard(item)
+    store.selectCard(item)
     //$router.push({ path: '/prod' })
 }
 
@@ -93,7 +93,7 @@ defineProps(
         }
     },
 )
-const counter = useCounterStore()
+const store = useMyStore()
 </script>
 
 <style scoped>
@@ -152,14 +152,7 @@ const counter = useCounterStore()
     font-weight: 400;
     font-size: 16px;
     color: #fff;
-}.card__description {
-    background: #ffffff;
-    border-radius: 4px;
-    font-weight: 400;
-    font-size: 12px;
-    color: #151414;
 }
-
 .menu__bottom {
     display: flex;
     flex-direction: column;
