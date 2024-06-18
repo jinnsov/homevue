@@ -58,10 +58,10 @@ const schema = {
     },
 };
 const isPosting = ref(false)
-const errorMessage = ref('')
+const message = ref('')
 async function onSubmit(values) {
     isPosting.value = true
-    errorMessage.value = await axiosPost(values)
+    message.value = await axiosPost(values)
     isPosting.value = false
 }
 </script>

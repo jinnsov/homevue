@@ -34,7 +34,7 @@ import {ref, onMounted} from "vue";
 import {axiosPost} from "@/utils/AxiosPost.js";
 import Loading from "../Loading.vue";
 const isPosting = ref(false)
-const errorMessage = ref('')
+const message = ref('')
 const schema = {
     login: (value) => {
         if (value && value.trim().length) {
@@ -51,10 +51,9 @@ const schema = {
 };
 async function onSubmit(values) {
     isPosting.value = true
-    errorMessage.value = (await axiosPost(values)).data
+    message.value = (await axiosPost(values)).data
     localStorage.setItem('login', values.login)
     store.setLogin(values.login)
-    console.log(errorMessage.value)
     isPosting.value = false
     window.location.replace("/add")
 }

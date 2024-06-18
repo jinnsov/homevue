@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="-refactoring">
-      <change beforePath="$PROJECT_DIR$/src/utils/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/router.js" afterDir="false" />
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="lesson6&#10;-refactoring">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AddProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AddProduct.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AuthorizationButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AuthorizationButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AuthorizationForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AuthorizationForm.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,12 +39,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="Рефакторинг" />
-        <option name="rewordedMessage" value="Рефакторинг + редирект в /add после авторизации" />
+        <option name="originalMessage" value="-refactoring" />
+        <option name="rewordedMessage" value="-refactoring" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="f91933231e75afe1027ae0554af982966c729358" />
+    <option name="onto" value="462373cae0612ea8fb0e100d47f99430e316b490" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
@@ -188,14 +191,7 @@
       <workItem from="1718550408884" duration="608000" />
       <workItem from="1718551529158" duration="12212000" />
       <workItem from="1718636440857" duration="16194000" />
-      <workItem from="1718735770467" duration="2072000" />
-    </task>
-    <task id="LOCAL-00005" summary="попытка добавить props">
-      <created>1716466267454</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1716466267454</updated>
+      <workItem from="1718735770467" duration="2733000" />
     </task>
     <task id="LOCAL-00006" summary="попытка добавить props">
       <created>1716466335543</created>
@@ -533,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718737856109</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="-refactoring">
+      <created>1718737967588</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1718737967588</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +578,7 @@
     <MESSAGE value="Рефакторинг + редирект в /add после авторизации" />
     <MESSAGE value="Рефакторинг" />
     <MESSAGE value="-add navigation guard&#10;-add file router.js&#10;-unit-test (starter)&#10;-refactoring -&gt; '@' prefix" />
-    <MESSAGE value="-refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="-refactoring" />
+    <MESSAGE value="lesson6&#10;-refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson6&#10;-refactoring" />
   </component>
 </project>

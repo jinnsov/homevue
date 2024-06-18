@@ -1,6 +1,6 @@
 <template>
     <router-link class=" cart__num"  id="cart" :to="{name : 'authorization'}">
-        <p class="" id="auto_num" v-if="counter.login">{{ counter.login }}</p>
+        <p class="" id="auto_num" v-if="store.login">{{ store.login }}</p>
         <p class="" id="auto_num"  v-else>Учётная запись</p>
     </router-link>
 </template>
@@ -8,11 +8,10 @@
 <script setup>
 import {useMyStore} from '@/stores/productStore.js'
 import {onMounted} from "vue";
-const counter = useMyStore()
+const store = useMyStore()
 onMounted(() => {
     const ls = localStorage.getItem('login')
-    console.log('login: ' + counter.login)
-    if (ls) counter.setLogin(ls)
+    if (ls) store.setLogin(ls)
 })
 </script>
 
