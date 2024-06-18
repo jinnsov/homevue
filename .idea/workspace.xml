@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="Рефакторинг + редирект в /add после авторизации">
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="Рефакторинг">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Admin/AuthorizationButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AuthorizationButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AuthorizationForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AuthorizationForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Client/ClientPerson.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/ClientPerson.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/AxiosPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/AxiosPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,15 +27,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="package.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lesson5" />
+        <entry key="$PROJECT_DIR$" value="lesson6" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,7 +76,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;lesson6&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lesson6-vitest&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.15.0&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.15.0&quot;,
@@ -94,7 +106,42 @@
       <recent name="D:\Dev\vue\homevue\src\utils" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="CartButton object" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/specs/CartButton.spec.js" />
+      <test-names>
+        <test-name value="CartButton object" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="CartButton object.imports without error" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/specs/CartButton.spec.js" />
+      <test-names>
+        <test-name value="CartButton object" />
+        <test-name value="imports without error" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -105,6 +152,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.Test" />
+      <item itemvalue="Vitest.CartButton object" />
+      <item itemvalue="Vitest.CartButton object.imports without error" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Vitest.CartButton object" />
+        <item itemvalue="Vitest.CartButton object.imports without error" />
+        <item itemvalue="npm.Test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -133,7 +193,13 @@
       <workItem from="1717501527144" duration="40546000" />
       <workItem from="1717853935456" duration="27062000" />
       <workItem from="1717924709401" duration="35245000" />
-      <workItem from="1718035490225" duration="5401000" />
+      <workItem from="1718035490225" duration="6852000" />
+      <workItem from="1718127055786" duration="594000" />
+      <workItem from="1718378819846" duration="93000" />
+      <workItem from="1718531117084" duration="11073000" />
+      <workItem from="1718550408884" duration="608000" />
+      <workItem from="1718551529158" duration="12212000" />
+      <workItem from="1718636440857" duration="16194000" />
     </task>
     <task id="LOCAL-00001" summary="start2">
       <created>1716459065339</created>
@@ -443,7 +509,21 @@
       <option name="project" value="LOCAL" />
       <updated>1718039757540</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Рефакторинг">
+      <created>1718042051847</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1718042051847</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Рефакторинг">
+      <created>1718046594908</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1718046594908</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,9 +564,9 @@
     <MESSAGE value="Дбавил основной функционал и начал авторизацию на localStorage" />
     <MESSAGE value="Дбавил авторизацию на localStorage + pinia" />
     <MESSAGE value="Поправил логику авторизации" />
-    <MESSAGE value="Рефакторинг" />
     <MESSAGE value="Рефакторинг + редирект в /add после авторизации" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг + редирект в /add после авторизации" />
+    <MESSAGE value="Рефакторинг" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

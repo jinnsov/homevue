@@ -1,11 +1,11 @@
 <template>
     <!-- Карточка товара -->
-    <div class="card" :id="item.id">
+    <div id="id" class="card" :id="item.id">
         <!-- Верхняя часть -->
         <div class="card__top">
             <!-- Изображение-ссылка товара -->
             <a  class="card__image">
-                <img :src="item['image']" :alt="item.category" />
+                <img :src="item.image" :alt="item.category" />
             </a>
             <!-- Рэйтинг на товар -->
             <div class="card__label">{{item.rating['rate']}}</div>
@@ -77,13 +77,27 @@ function select (item) {
 })*/
 defineProps(
     {
-        item: Object, default: {
+        item: {
             id: Number,
             title: String,
             price: Number,
             description: String,
             category: String,
             image: String,
+            rating: Object, default: {
+                rating: {
+                    rate: 0,
+                    count: 0
+                }
+            }
+        },
+        Object, default: {
+            id: 0,
+            title: 'String',
+            price: 0,
+            description: 'String',
+            category: 'String',
+            image: 'String',
             rating: Object, default: {
                 rating: {
                     rate: 0,
