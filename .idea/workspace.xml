@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="несколько тестов">
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/AuthorizationButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AuthorizationButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/AuthorizationForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AuthorizationForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="-refactoring">
+      <change beforePath="$PROJECT_DIR$/src/utils/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,11 +87,11 @@
       <recent name="D:\Dev\vue\homevue\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dev\vue\homevue\src\components\Product" />
       <recent name="D:\Dev\vue\homevue\src\components\Client" />
       <recent name="D:\Dev\vue\homevue\src\components\Admin" />
       <recent name="D:\Dev\vue\homevue\src\components\Cart" />
       <recent name="D:\Dev\vue\homevue\src\stores" />
-      <recent name="D:\Dev\vue\homevue\src\utils" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -193,34 +188,7 @@
       <workItem from="1718550408884" duration="608000" />
       <workItem from="1718551529158" duration="12212000" />
       <workItem from="1718636440857" duration="16194000" />
-    </task>
-    <task id="LOCAL-00001" summary="start2">
-      <created>1716459065339</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1716459065339</updated>
-    </task>
-    <task id="LOCAL-00002" summary="получить данные из fakestoreapi">
-      <created>1716460719739</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1716460719739</updated>
-    </task>
-    <task id="LOCAL-00003" summary="формирую v-for">
-      <created>1716461916059</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1716461916059</updated>
-    </task>
-    <task id="LOCAL-00004" summary="реализовал v-for">
-      <created>1716463376075</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1716463376075</updated>
+      <workItem from="1718735770467" duration="2072000" />
     </task>
     <task id="LOCAL-00005" summary="попытка добавить props">
       <created>1716466267454</created>
@@ -516,7 +484,56 @@
       <option name="project" value="LOCAL" />
       <updated>1718046594908</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="-add navigation guard&#10;-add file router.js&#10;-unit-test (starter)&#10;-refactoring -&gt; '@' prefix">
+      <created>1718736035012</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1718736035012</updated>
+    </task>
+    <task id="LOCAL-00048" summary="-refactoring">
+      <created>1718736454421</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1718736454421</updated>
+    </task>
+    <task id="LOCAL-00049" summary="-refactoring">
+      <created>1718736596330</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1718736596330</updated>
+    </task>
+    <task id="LOCAL-00050" summary="-refactoring">
+      <created>1718737530594</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1718737530595</updated>
+    </task>
+    <task id="LOCAL-00051" summary="-refactoring">
+      <created>1718737683167</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1718737683167</updated>
+    </task>
+    <task id="LOCAL-00052" summary="-refactoring">
+      <created>1718737731137</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1718737731137</updated>
+    </task>
+    <task id="LOCAL-00053" summary="-refactoring">
+      <created>1718737856109</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1718737856109</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,8 +551,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="реализовал v-for" />
-    <MESSAGE value="попытка добавить props" />
     <MESSAGE value="реализвал пропс в app.vue" />
     <MESSAGE value="App.vue разгрузил. Вывод товара в сетку засунул" />
     <MESSAGE value="Список товаров получаю из АПИ" />
@@ -559,17 +574,8 @@
     <MESSAGE value="Поправил логику авторизации" />
     <MESSAGE value="Рефакторинг + редирект в /add после авторизации" />
     <MESSAGE value="Рефакторинг" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/Admin/AddProduct.vue</url>
-          <line>40</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="-add navigation guard&#10;-add file router.js&#10;-unit-test (starter)&#10;-refactoring -&gt; '@' prefix" />
+    <MESSAGE value="-refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="-refactoring" />
   </component>
 </project>

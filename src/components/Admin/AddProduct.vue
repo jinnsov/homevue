@@ -16,7 +16,6 @@
             <ErrorMessage  :name="item.name" />
         </div>
         <Loading :is-posting="isPosting"></Loading>
-        <pre>{{errorMessage}}</pre>
     </form>
 </template>
 
@@ -24,7 +23,7 @@
 // https://vee-validate.logaretm.com/v4/examples/checkboxes-and-radio/
 import {Form, Field, ErrorMessage,} from "vee-validate"
 import {ref} from "vue";
-import {axiosPost} from "../../utils/AxiosPost.js";
+import {axiosPost} from "@/utils/AxiosPost.js";
 import Loading from "../Loading.vue";
 const schema = {
     title: (value) => {

@@ -12,10 +12,8 @@
 <script setup>
 import Card from "./Card.vue";
 import Search from "./Search.vue";
-
-import {reactive, ref} from "vue";
-import {goodsValues} from "../utils/LocalGoods.js";
-import Cart from "./Cart/CartButton.vue";
+import {reactive, } from "vue";
+import {goodsValues} from "@/utils/LocalGoods.js";
 const dataFiltered = reactive([... goodsValues]);
 function DataFilteredFromSearch (n){
     dataFiltered.length=0

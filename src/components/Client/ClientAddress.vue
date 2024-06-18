@@ -16,7 +16,6 @@
                 <ErrorMessage  :name="item.name" />
             </div>
             <Loading :is-posting="isPosting"></Loading>
-            <pre>{{errorMessage}}</pre>
         </Form>
     </div>
 </template>
@@ -24,10 +23,10 @@
 <script setup>
 import {Form, Field, ErrorMessage} from "vee-validate"
 import {ref} from "vue";
-import {axiosPost} from "../../utils/AxiosPost.js";
+import {axiosPost} from "@/utils/AxiosPost.js";
 import Loading from "../Loading.vue";
 const isPosting = ref(false)
-const errorMessage = ref('')
+const message = ref('')
 const schema = {
     city: (value) => {
         if (value && value.trim().length) {
@@ -56,7 +55,7 @@ const schema = {
 };
 async function onSubmit(values) {
     isPosting.value = true
-    errorMessage.value = await axiosPost(values)
+    message.value = await axiosPost(values)
     isPosting.value = false
 }
 </script>
@@ -120,16 +119,5 @@ input {
     cursor: pointer; /* Меняем курсор при наведении */
     margin-top: auto; /* Прижимаем кнопку к низу карточки */
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-}
-.card__label {
-    padding: 4px 8px;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background: #ff6633;
-    border-radius: 4px;
-    font-weight: 400;
-    font-size: 16px;
-    color: #fff;
 }
 </style>

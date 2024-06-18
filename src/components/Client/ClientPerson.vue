@@ -31,7 +31,6 @@
 <!--                    <p>Values</p>
             <pre>{{ values }}</pre>-->
         <Loading :is-posting="isPosting"></Loading>
-        <pre>{{errorMessage}}</pre>
     </form>
 
 </template>
@@ -41,9 +40,9 @@
 import {Form, Field, ErrorMessage,} from "vee-validate"
 import Loading from "../Loading.vue";
 import {ref} from "vue";
-import {axiosPost} from "../../utils/AxiosPost.js";
+import {axiosPost} from "@/utils/AxiosPost.js";
 const isPosting = ref(false)
-const errorMessage = ref('')
+const message = ref('')
 const schema = {
     last: (value) => {
         if (value && value.trim().length) {
@@ -98,7 +97,7 @@ const schema = {
 };
 async function onSubmit(values) {
     isPosting.value = true
-    errorMessage.value = await axiosPost(values)
+    message.value = await axiosPost(values)
     isPosting.value = false
 }
 </script>
@@ -163,12 +162,5 @@ input {
     cursor: pointer; /* Меняем курсор при наведении */
     margin-top: auto; /* Прижимаем кнопку к низу карточки */
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-}
-.agreed {
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-    display: block;
-    border: 1px solid #70c05b;
-    padding: 10px 10px 10px;
-    height: 40px ;
 }
 </style>

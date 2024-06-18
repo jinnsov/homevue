@@ -26,7 +26,7 @@
         </div>
     </template>
 <script setup>
-import {useMyStore} from '../stores/productStore.js'
+import {useMyStore} from '@/stores/productStore.js'
 
 const store = useMyStore()
 function btn (item) {

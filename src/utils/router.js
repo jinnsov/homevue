@@ -1,9 +1,9 @@
 import {createRouter, createWebHistory} from "vue-router";
-import GreedCards from "@/components/GreedCards.vue";
+import GreedCards from "@/components/Products/GreedCards.vue";
 import ClientPerson from "@/components/Client/ClientPerson.vue";
 import ClientAddress from "@/components/Client/ClientAddress.vue";
 import CartList from "@/components/Cart/CartList.vue";
-import Product from "@/components/Product.vue";
+import Product from "@/components/Products/Product.vue";
 import AuthorizationForm from "@/components/Admin/AuthorizationForm.vue";
 
 const router = createRouter({
@@ -57,7 +57,7 @@ const router = createRouter({
     scrollBehavior: () => ({ top: 0 })
 })
 //  localStorage.getItem('login')
-router.beforeEach(async (to, from) => {
+router.beforeEach(async (to) => {
     if (
         // проверка, что пользователь авторизован
         !localStorage.getItem('login')

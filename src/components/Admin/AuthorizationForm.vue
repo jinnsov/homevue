@@ -1,5 +1,5 @@
 <template>
-    <div id="app" v-if="!counter.login">
+    <div id="app" v-if="!store.login">
         <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
             <div class="button__group">
                 <p>Авторизация</p>
@@ -14,14 +14,13 @@
                 <ErrorMessage  :name="item.name" />
             </div>
             <Loading :is-posting="isPosting"></Loading>
-            <pre>{{errorMessage}}</pre>
         </Form>
     </div>
     <div v-else>
         <div>
             <div class="button__group">
                 <p>Выполнен вход в аккаунт</p>
-                <h3 style="color: darkblue">{{counter.login}}</h3>
+                <h3 style="color: darkblue">{{ store.login }}</h3>
                 <button class="button__add" @click="removeLocalStorageContent">Выйти</button>
             </div>
         </div>
@@ -54,30 +53,26 @@ async function onSubmit(values) {
     isPosting.value = true
     errorMessage.value = (await axiosPost(values)).data
     localStorage.setItem('login', values.login)
-    counter.setLogin(values.login)
+    store.setLogin(values.login)
     console.log(errorMessage.value)
     isPosting.value = false
     window.location.replace("/add")
 }
-const counter = useMyStore()
-const inputValue = ref('')
+const store = useMyStore()
 const localStorageValue = ref('')
 
 onMounted(() => {
     showLocalStorageContent()
 })
 
-const setLocalStorageContent = () => {
-    localStorage.setItem('item', inputValue.value)
-}
-
 const showLocalStorageContent = () => {
     localStorageValue.value = localStorage.getItem('login')
 }
 
 const removeLocalStorageContent = () => {
-    localStorageValue.value = localStorage.removeItem('login')
-    counter.setLogin('')
+    localStorage.removeItem('login')
+    localStorageValue.value = undefined
+    store.setLogin('')
 }
 </script>
 
