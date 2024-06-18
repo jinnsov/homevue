@@ -7,7 +7,7 @@
                 <Field name="password" type="input" style="'input'" placeholder="password"/>
             </div>
             <div class="add-card">
-                <button type="submit" class="button__add">Добавить</button>
+                <button id="login" type="submit" class="button__add">Добавить</button>
                 <button type="reset" class="button__add">Очистить</button>
             </div>
             <div v-for="item in schema">
@@ -52,11 +52,12 @@ const schema = {
 };
 async function onSubmit(values) {
     isPosting.value = true
-    errorMessage.value = await axiosPost(values)
+    errorMessage.value = (await axiosPost(values)).data
     localStorage.setItem('login', values.login)
     counter.setLogin(values.login)
-    window.location.replace("/add")
+    console.log(errorMessage.value)
     isPosting.value = false
+    window.location.replace("/add")
 }
 const counter = useMyStore()
 const inputValue = ref('')

@@ -3,6 +3,12 @@ import axios from "axios";
 
 export async function  axiosPost(values){
     let errorMessage = ''
+    const response = await axios.post('https://httpbin.org/post', { values })
+    return  response.data
+}
+
+/*export async function  axiosPost(values){
+    let errorMessage = ''
     await axios.post('https://httpbin.org/post', {values})
         .then((response) => {
           //  errorMessage = response.status;
@@ -11,4 +17,4 @@ export async function  axiosPost(values){
         errorMessage = e
      })
     return errorMessage
-}
+}*/
