@@ -29,10 +29,10 @@
 </template>
 
 <script setup>
-import   {useMyStore} from '../../stores/productStore.js'
+import   {useMyStore} from '@/stores/productStore.js'
 import {Form, Field, ErrorMessage} from "vee-validate"
 import {ref, onMounted} from "vue";
-import {axiosPost} from "../../utils/AxiosPost.js";
+import {axiosPost} from "@/utils/AxiosPost.js";
 import Loading from "../Loading.vue";
 const isPosting = ref(false)
 const errorMessage = ref('')

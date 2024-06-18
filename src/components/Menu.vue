@@ -9,7 +9,7 @@
 
 <script setup>
 const emits =defineEmits(['section-click'])
-import   {useMyStore} from '../stores/productStore.js'
+import   {useMyStore} from '@/stores/productStore.js'
 const store = useMyStore()
 function btn (n){  emits( 'section-click',n) }
 </script>

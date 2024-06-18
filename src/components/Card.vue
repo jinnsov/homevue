@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import {useMyStore} from '../stores/productStore.js'
+import   {useMyStore} from '@/stores/productStore.js'
 function btn (item) {
     store.addCard(item)
 }

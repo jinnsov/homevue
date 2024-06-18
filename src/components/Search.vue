@@ -1,5 +1,4 @@
 <template>
-    <GuessAge></GuessAge>
     <form>
         <input type="text" placeholder="Искать здесь..." v-model="inputText">
         <button type="button"
@@ -8,7 +7,6 @@
     </form>
 </template>
 <script setup>
-import GuessAge from '../components/GuessAge.vue'
 const inputText = defineModel('inputText');
 const emit = defineEmits(['data-filter']);
 const props = defineProps({data:Object});
