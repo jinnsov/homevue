@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="lesson6&#10;-refactoring">
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="-refactoring">
+      <change afterPath="$PROJECT_DIR$/src/components/User/UserAdd.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/User/UserButton.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/User/UserForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/User/UserLogin.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/User/UserView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/AddProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AddProduct.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/AuthorizationButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AuthorizationButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/AuthorizationForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AuthorizationForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="package.json" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -67,11 +71,11 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;lesson6&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lesson7&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.15.0&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.15.0&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Dev/vue/homevue/src/images&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/2024-07-05-otus-electron&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -191,21 +195,14 @@
       <workItem from="1718550408884" duration="608000" />
       <workItem from="1718551529158" duration="12212000" />
       <workItem from="1718636440857" duration="16194000" />
-      <workItem from="1718735770467" duration="2733000" />
-    </task>
-    <task id="LOCAL-00006" summary="попытка добавить props">
-      <created>1716466335543</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1716466335543</updated>
-    </task>
-    <task id="LOCAL-00007" summary="реализвал пропс в app.vue">
-      <created>1716494560256</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1716494560256</updated>
+      <workItem from="1718735770467" duration="4464000" />
+      <workItem from="1719592539420" duration="7991000" />
+      <workItem from="1719602829715" duration="26833000" />
+      <workItem from="1719849475807" duration="19860000" />
+      <workItem from="1720206061148" duration="54000" />
+      <workItem from="1720954738099" duration="50000" />
+      <workItem from="1720954825717" duration="3449000" />
+      <workItem from="1720983239907" duration="1053000" />
     </task>
     <task id="LOCAL-00008" summary="App.vue разгрузил. Вывод товара в сетку засунул">
       <created>1716498599715</created>
@@ -536,7 +533,21 @@
       <option name="project" value="LOCAL" />
       <updated>1718737967588</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="-refactoring">
+      <created>1718738641404</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1718738641404</updated>
+    </task>
+    <task id="LOCAL-00056" summary="-refactoring">
+      <created>1719948858653</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1719948858653</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="реализвал пропс в app.vue" />
     <MESSAGE value="App.vue разгрузил. Вывод товара в сетку засунул" />
     <MESSAGE value="Список товаров получаю из АПИ" />
     <MESSAGE value="Вернул список продуктов из fakestoreapi и сделал обратку ошибки АПИ" />
@@ -579,6 +589,18 @@
     <MESSAGE value="Рефакторинг" />
     <MESSAGE value="-add navigation guard&#10;-add file router.js&#10;-unit-test (starter)&#10;-refactoring -&gt; '@' prefix" />
     <MESSAGE value="lesson6&#10;-refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson6&#10;-refactoring" />
+    <MESSAGE value="-refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="-refactoring" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/stores/userStore.js</url>
+          <line>13</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

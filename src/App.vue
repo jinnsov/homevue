@@ -2,11 +2,13 @@
 import Menu from "./components/Menu.vue";
 import Cart from "./components/Cart/CartButton.vue";
 import Authorization from "./components/Admin/AuthorizationButton.vue";
+import UserButton from "@/components/User/UserButton.vue";
 </script>
 
 <template>
     <div class="page">
         <authorization></authorization>
+        <user-button></user-button>
         <cart></cart>
         <Menu class="menu"></Menu>
         <router-view></router-view>

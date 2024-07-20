@@ -5,6 +5,10 @@ import ClientAddress from "@/components/Client/ClientAddress.vue";
 import CartList from "@/components/Cart/CartList.vue";
 import Product from "@/components/Products/Product.vue";
 import AuthorizationForm from "@/components/Admin/AuthorizationForm.vue";
+import UserForm from "@/components/User/UserForm.vue";
+import UserAdd from "@/components/User/UserAdd.vue";
+import UserView from "@/components/User/UserView.vue";
+import UserLogin from "@/components/User/UserLogin.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -53,6 +57,30 @@ const router = createRouter({
             component: AuthorizationForm,
             alias: '/login'
         },
+        {
+            path: '/user/',
+            name: 'user',
+            component: UserForm,
+            alias: '/user'
+        },
+        {
+            path: '/user/add',
+            name: 'useradd',
+            component: UserAdd,
+            alias: '/useradd'
+        },
+        {
+            path: '/user/view',
+            name: 'userview',
+            component: UserView,
+            alias: '/userview'
+        },
+        {
+            path: '/user/login',
+            name: 'login',
+            component: UserLogin,
+            alias: '/login'
+        },
     ],
     scrollBehavior: () => ({ top: 0 })
 })
@@ -69,6 +97,6 @@ router.beforeEach(async (to) => {
     }
 })
 router.onError((e) => {
-    console.error(e.message)
+    console.error('Ошибка:'  + e.message)
 })
 export  default router
