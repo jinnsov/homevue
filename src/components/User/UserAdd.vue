@@ -131,9 +131,10 @@ async function onSubmit(values) {
     isPosting.value = true
     console.log('!')
     useUser().addPerson(values)
+    //useUser().setUserLogin(values.login)
     message.value = await axiosPost(values)
     isPosting.value = false
-    console.log(useUser().getCurrentUser());
+    //console.log(useUser().getCurrentUser());
 }
 </script>
 

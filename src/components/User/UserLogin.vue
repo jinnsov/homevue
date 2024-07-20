@@ -17,7 +17,8 @@
 </template>
 
 <script setup>
-import   {useMyStore} from '@/stores/productStore.js'
+import   {useUser} from '@/stores/userStore.js'
+const store = useUser()
 import {Form, Field, ErrorMessage} from "vee-validate"
 import {ref, onMounted} from "vue";
 import {axiosPost} from "@/utils/AxiosPost.js";
@@ -38,15 +39,16 @@ const schema = {
         return 'Не заполнено поле "Пароль"';
     },
 };
+
 async function onSubmit(values) {
     isPosting.value = true
     message.value = (await axiosPost(values)).data
-    localStorage.setItem('login', values.login)
-    store.setLogin(values.login)
+    localStorage.setItem('userLogin', values.login)
+    //store.setUserLogin(values.login)
     isPosting.value = false
-    window.location.replace("/add")
+    window.location.replace("/")
 }
-const store = useMyStore()
+
 const localStorageValue = ref('')
 
 onMounted(() => {
@@ -54,11 +56,11 @@ onMounted(() => {
 })
 
 const showLocalStorageContent = () => {
-    localStorageValue.value = localStorage.getItem('login')
+    localStorageValue.value = localStorage.getItem('userLogin')
 }
 
 const removeLocalStorageContent = () => {
-    localStorage.removeItem('login')
+    localStorage.removeItem('userLogin')
     localStorageValue.value = undefined
     store.setLogin('')
 }

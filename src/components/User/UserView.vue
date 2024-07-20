@@ -1,5 +1,5 @@
 <template>
-  <pre>UserView</pre>
+  <h1>UserView</h1>
         <div class="button__group">
             <div class="button__group">
                 <p>ФИО</p>

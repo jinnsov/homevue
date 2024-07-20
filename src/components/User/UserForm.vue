@@ -1,10 +1,22 @@
 <template xmlns="http://www.w3.org/1999/html">
-  <pre>UserForm</pre>
+  <h1>UserForm</h1>
   <div class="card">
-      <div class="button__group">
-          <router-link class="button__add" id="cart" :to="{name : 'login'}">Вход</router-link>
-          <router-link class="button__add" id="cart" :to="{name : 'useradd'}">Регистрация</router-link>
-          <router-link class="button__add" id="cart" :to="{name : 'userview'}">Просмотр</router-link>
+      <div>
+          <div class="button__group" v-if="isLogin === false">
+              <router-link class="button__add" id="cart" :to="{name : 'login'}">Вход</router-link>
+              <router-link class="button__add" id="cart" :to="{name : 'useradd'}">Регистрация</router-link>
+          </div>
+          <div v-else>
+              <router-link class="button__add" id="cart" :to="{name : 'userview'}">Просмотр</router-link>
+              <div class="button__group">
+                  <p>Выполнен вход в аккаунт</p>
+                  <h3 style="color: darkblue">{{ user.getUserLogin }}</h3>
+                  <button class="button__add" @click="removeLocalStorageContent">Выйти</button>
+              </div>
+          </div>
+      </div>
+      <div>
+          <h1>{{ isLogin === undefined }}</h1>
       </div>
   </div>
 
@@ -12,7 +24,24 @@
 </template>
 
 <script setup>
+import {onMounted, ref} from "vue";
+import {useUser} from "@/stores/userStore.js";
+const user = useUser();
+const localStorageValue = ref('')
+const isLogin = ref (user.getIsLogin)
+onMounted(() => {
+    showLocalStorageContent()
+})
 
+const showLocalStorageContent = () => {
+    localStorageValue.value = localStorage.getItem('userLogin')
+}
+const removeLocalStorageContent = () => {
+    localStorage.removeItem('userLogin')
+    localStorageValue.value = undefined
+    //user.setUserLogin('')
+    isLogin.value = undefined
+}
 </script>
 
 <style scoped>
