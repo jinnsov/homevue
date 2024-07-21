@@ -1,10 +1,18 @@
 <template>
     <router-link class=" cart__num"  id="user" :to="{name : 'user'}">
-        <p class="" id="auto_num">Пользователь</p>
+        <p class="" id="auto_num" v-if="useUser().isLogin">{{ userLogin }}</p>
+        <p class="" id="auto_num"  v-else>Учётная запись</p>
     </router-link>
 </template>
 
 <script setup>
+import   {useUser} from '@/stores/userStore.js'
+import { ref, watch } from "vue";
+const userLogin = ref( '' )
+
+watch(useUser(), () => {
+    userLogin.value = useUser().getUserLogin
+})
 
 </script>
 
@@ -23,7 +31,7 @@
     color: #70c05b;
     font-size: 10px;
     font-weight: 100;
-    top: 50px;
+    top: 5px; /*top: 50px;*/
     right: 5px;
 }.cart__num:hover {
      background-color: #ff6633;

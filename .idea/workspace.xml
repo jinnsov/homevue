@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="-refactoring">
-      <change afterPath="$PROJECT_DIR$/src/components/User/UserAdd.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/User/UserButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/User/UserForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/User/UserLogin.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/User/UserView.vue" afterDir="false" />
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="lesson7a stage 5">
+      <change afterPath="$PROJECT_DIR$/src/components/StoreTitle.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/UserForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/UserForm.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lesson6" />
+        <entry key="$PROJECT_DIR$" value="lesson7" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,31 +64,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;lesson7&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.15.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.15.0&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/2024-07-05-otus-electron&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "lesson7a",
+    "ignore.virus.scanning.warn.message": "true",
+    "ignore_missing_gitignore": "true",
+    "javascript.nodejs.core.library.configured.version": "18.15.0",
+    "javascript.nodejs.core.library.typings.version": "18.15.0",
+    "last_opened_file_path": "D:/Dev/vue/homevue/src/components",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dev\vue\homevue\src\components" />
+      <recent name="D:\Dev\vue\homevue\src\stores" />
       <recent name="D:\Dev\vue\homevue\src\images" />
       <recent name="D:\Dev\vue\homevue\src" />
-      <recent name="D:\Dev\vue\homevue\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Dev\vue\homevue\src\components\Product" />
@@ -155,9 +154,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Vitest.CartButton object" />
         <item itemvalue="Vitest.CartButton object.imports without error" />
+        <item itemvalue="Vitest.CartButton object" />
         <item itemvalue="npm.Test" />
+        <item itemvalue="Vitest.CartButton object.imports without error" />
+        <item itemvalue="Vitest.CartButton object" />
       </list>
     </recent_temporary>
   </component>
@@ -203,62 +204,9 @@
       <workItem from="1720954738099" duration="50000" />
       <workItem from="1720954825717" duration="3449000" />
       <workItem from="1720983239907" duration="1053000" />
-    </task>
-    <task id="LOCAL-00008" summary="App.vue разгрузил. Вывод товара в сетку засунул">
-      <created>1716498599715</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1716498599715</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Список товаров получаю из АПИ">
-      <created>1716501830186</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1716501830186</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Вернул список продуктов из fakestoreapi и сделал обратку ошибки АПИ">
-      <created>1716633870784</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1716633870784</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Добавил поиск/фильтр товаров. Поиск по пустому полю - все товары">
-      <created>1716716037095</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1716716037095</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Добавил поиск/фильтр товаров. Поиск по пустому полю - все товары">
-      <created>1716716082066</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1716716082066</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Сдеалал макет Меню и формы">
-      <created>1716725857001</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1716725857001</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Сдеалал макет Меню и формы">
-      <created>1716725902113</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1716725902113</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Сдеалал макет Меню и формы">
-      <created>1716799589309</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1716799589309</updated>
+      <workItem from="1721562093926" duration="18279000" />
+      <workItem from="1721647689892" duration="2182000" />
+      <workItem from="1722155672751" duration="25061000" />
     </task>
     <task id="LOCAL-00016" summary="Сдеалал макет Меню и формы w2">
       <created>1716802614949</created>
@@ -547,7 +495,63 @@
       <option name="project" value="LOCAL" />
       <updated>1719948858653</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="lesson7a start">
+      <created>1721497352110</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1721497352110</updated>
+    </task>
+    <task id="LOCAL-00058" summary="lesson7a stage 1">
+      <created>1721571628453</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1721571628453</updated>
+    </task>
+    <task id="LOCAL-00059" summary="lesson7a stage 2">
+      <created>1722156884611</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1722156884611</updated>
+    </task>
+    <task id="LOCAL-00060" summary="lesson7a stage 3">
+      <created>1722172387241</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1722172387241</updated>
+    </task>
+    <task id="LOCAL-00061" summary="lesson7a stage 4">
+      <created>1722173204153</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1722173204153</updated>
+    </task>
+    <task id="LOCAL-00062" summary="lesson7a stage 4">
+      <created>1722173213826</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1722173213826</updated>
+    </task>
+    <task id="LOCAL-00063" summary="lesson7a stage 5">
+      <created>1722179305119</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1722179305119</updated>
+    </task>
+    <task id="LOCAL-00064" summary="lesson7a stage 5">
+      <created>1722179345789</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1722179345789</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,12 +569,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="App.vue разгрузил. Вывод товара в сетку засунул" />
-    <MESSAGE value="Список товаров получаю из АПИ" />
-    <MESSAGE value="Вернул список продуктов из fakestoreapi и сделал обратку ошибки АПИ" />
-    <MESSAGE value="Добавил поиск/фильтр товаров. Поиск по пустому полю - все товары" />
-    <MESSAGE value="Сдеалал макет Меню и формы" />
-    <MESSAGE value="Сдеалал макет Меню и формы w2" />
     <MESSAGE value="Сделал рабочюю версию меню с формами (поиск, карточки...)" />
     <MESSAGE value="Добавил кнопки &quot;Добавить&quot; и &quot;Очистить&quot;" />
     <MESSAGE value="Погдотовка формы Адрес к валидации (vee-validate)" />
@@ -590,17 +588,12 @@
     <MESSAGE value="-add navigation guard&#10;-add file router.js&#10;-unit-test (starter)&#10;-refactoring -&gt; '@' prefix" />
     <MESSAGE value="lesson6&#10;-refactoring" />
     <MESSAGE value="-refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="-refactoring" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/stores/userStore.js</url>
-          <line>13</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="lesson7a start" />
+    <MESSAGE value="lesson7a stage 1" />
+    <MESSAGE value="lesson7a stage 2" />
+    <MESSAGE value="lesson7a stage 3" />
+    <MESSAGE value="lesson7a stage 4" />
+    <MESSAGE value="lesson7a stage 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson7a stage 5" />
   </component>
 </project>

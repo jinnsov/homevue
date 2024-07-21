@@ -1,50 +1,56 @@
 <template>
-    <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
-        <div class="button__group">
+    <div v-if="isSubmit">
+        <h2>Регистрация успешно завершена</h2>
+        <router-link class="button__add" id="cart" :to="{name : 'cards'}">Ok</router-link>
+    </div>
+    <div v-else>
+        <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
             <div class="button__group">
-                <p>ФИО</p>
-                <Field name="last" type="input" style="'input'" placeholder="Фамилия"/>
-                <ErrorMessage  name="last" style="color: red"/>
-                <Field name="first" type="input" style="'input'" placeholder="Имя"/>
-                <ErrorMessage  name="first" style="color: red"/>
-                <Field name="second" type="input" style="'input'" placeholder="Отчество"/>
-                <ErrorMessage  name="second" style="color: red"/>
-                <Field name="birth" type="input" style="'input'"
-                       :placeholder="'Дата рождения (' + new Date('2000/01/01').toLocaleDateString().split('T')[0] +')'" />
-                <ErrorMessage  name="birth" style="color: red"/>
+                <h2>Новый пользователь</h2>
+                <div class="button__group">
+                    <p>ФИО</p>
+                    <Field name="last" type="input" style="'input'" placeholder="Фамилия"/>
+                    <ErrorMessage  name="last" style="color: red"/>
+                    <Field name="first" type="input" style="'input'" placeholder="Имя"/>
+                    <ErrorMessage  name="first" style="color: red"/>
+                    <Field name="second" type="input" style="'input'" placeholder="Отчество"/>
+                    <ErrorMessage  name="second" style="color: red"/>
+                    <Field name="birth" type="input" style="'input'"
+                           :placeholder="'Дата рождения (' + new Date('2000/01/01').toLocaleDateString().split('T')[0] +')'" />
+                    <ErrorMessage  name="birth" style="color: red"/>
+                </div>
+                <div class="button__group">
+                    <p>Адрес</p>
+                    <Field name="city" type="input" style="'input'" placeholder="Город"/>
+                    <ErrorMessage  name="city" style="color: red"/>
+                    <Field name="street" type="input" style="'input'" placeholder="Улица"/>
+                    <ErrorMessage  name="street" style="color: red"/>
+                    <Field name="house" type="input" style="'input'" placeholder="Дом"/>
+                    <ErrorMessage  name="house" style="color: red"/>
+                    <Field name="flat" type="input" style="'input'" placeholder="Квартира"/>
+                    <ErrorMessage  name="flat" style="color: red"/>
+                </div>
+                <div>
+                    <p>Согласие на обработку персональных данных</p>
+                    <Field name="agreed" type="checkbox"></Field>
+                    <p style="color: red"><ErrorMessage  name="agreed" class=""/></p>
+                </div>
+                <div class="button__group">
+                    <p>Электронная почта и пароль</p>
+                    <Field name="login" type="input" style="'input'" placeholder="login"/>
+                    <ErrorMessage  name="login" style="color: red"/>
+                    <Field name="password" type="input" style="'input'" placeholder="password"/>
+                    <ErrorMessage  name="password" style="color: red"/>
+                </div>
             </div>
-            <div class="button__group">
-                <p>Адрес</p>
-                <Field name="city" type="input" style="'input'" placeholder="Город"/>
-                <ErrorMessage  name="city" style="color: red"/>
-                <Field name="street" type="input" style="'input'" placeholder="Улица"/>
-                <ErrorMessage  name="street" style="color: red"/>
-                <Field name="house" type="input" style="'input'" placeholder="Дом"/>
-                <ErrorMessage  name="house" style="color: red"/>
-                <Field name="flat" type="input" style="'input'" placeholder="Квартира"/>
-                <ErrorMessage  name="flat" style="color: red"/>
+            <div class="add-card">
+                <button type="submit" class="button__add">Добавить</button>
+                <button type="reset" class="button__add">Очистить</button>
             </div>
-            <div>
-                <p>Согласие на обработку персональных данных</p>
-                <Field name="agreed" type="checkbox"></Field>
-                <p style="color: red"><ErrorMessage  name="agreed" class=""/></p>
-            </div>
-            <div class="button__group">
-                <p>Электронная почта и пароль</p>
-                <Field name="login" type="input" style="'input'" placeholder="login"/>
-                <ErrorMessage  name="login" style="color: red"/>
-                <Field name="password" type="input" style="'input'" placeholder="password"/>
-                <ErrorMessage  name="password" style="color: red"/>
-            </div>
-        </div>
-        <div class="add-card">
-            <button type="submit" class="button__add">Добавить</button>
-            <button type="reset" class="button__add">Очистить</button>
-        </div>
-        <!--                    <p>Values</p>
-                    <pre>{{ values }}</pre>-->
-        <Loading :is-posting="isPosting"></Loading>
-    </form>
+            <Loading :is-posting="isPosting"></Loading>
+        </form>
+    </div>
+
 
 </template>
 
@@ -56,6 +62,7 @@ import {ref} from "vue";
 import {axiosPost} from "@/utils/AxiosPost.js";
 import {useUser} from "@/stores/userStore.js";
 const isPosting = ref(false)
+const isSubmit = ref(false)
 const message = ref('')
 const schema = {
     last: (value) => {
@@ -116,7 +123,10 @@ const schema = {
     },
     login: (value) => {
         if (value && value.trim().length) {
-            return true;
+            if ( useUser().getUserLogin === value){
+                return 'Такой логин уже занят'
+            }
+            return true
         }
         return 'Не заполнено поле "Логин"';
     },
@@ -131,9 +141,9 @@ async function onSubmit(values) {
     isPosting.value = true
     console.log('!')
     useUser().addPerson(values)
-    //useUser().setUserLogin(values.login)
     message.value = await axiosPost(values)
     isPosting.value = false
+    isSubmit.value = true
     //console.log(useUser().getCurrentUser());
 }
 </script>

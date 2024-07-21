@@ -1,22 +1,20 @@
 <template xmlns="http://www.w3.org/1999/html">
-  <h1>UserForm</h1>
   <div class="card">
-      <div>
-          <div class="button__group" v-if="isLogin === false">
-              <router-link class="button__add" id="cart" :to="{name : 'login'}">Вход</router-link>
-              <router-link class="button__add" id="cart" :to="{name : 'useradd'}">Регистрация</router-link>
+      <div class="button__group">
+          <h2>Учётная запись</h2>
+          <div class="button__group" v-if="!usersStore.isLogin">
+              <router-link class="button__add" :to="{name : 'login'}">Вход</router-link>
+              <router-link class="button__add" :to="{name : 'useradd'}">Регистрация</router-link>
           </div>
           <div v-else>
-              <router-link class="button__add" id="cart" :to="{name : 'userview'}">Просмотр</router-link>
               <div class="button__group">
                   <p>Выполнен вход в аккаунт</p>
-                  <h3 style="color: darkblue">{{ user.getUserLogin }}</h3>
-                  <button class="button__add" @click="removeLocalStorageContent">Выйти</button>
+                  <h3 style="color: darkblue">{{ usersStore.getUserLogin }}</h3>
+                  <router-link class="button__add " :to="{name : 'userview'}">Просмотр</router-link>
+                  <router-link class="button__add" @click="leaveAccount" :to="{name : 'user'}">Выйти</router-link>
               </div>
+                  <router-link class="button__add" :to="{name : 'cards'}">Ok</router-link>
           </div>
-      </div>
-      <div>
-          <h1>{{ isLogin === undefined }}</h1>
       </div>
   </div>
 
@@ -24,23 +22,16 @@
 </template>
 
 <script setup>
-import {onMounted, ref} from "vue";
+import { onMounted, ref} from "vue";
 import {useUser} from "@/stores/userStore.js";
-const user = useUser();
-const localStorageValue = ref('')
-const isLogin = ref (user.getIsLogin)
-onMounted(() => {
-    showLocalStorageContent()
-})
+const usersStore = useUser();
+const isLogin = ref (false)
 
-const showLocalStorageContent = () => {
-    localStorageValue.value = localStorage.getItem('userLogin')
-}
-const removeLocalStorageContent = () => {
-    localStorage.removeItem('userLogin')
-    localStorageValue.value = undefined
-    //user.setUserLogin('')
-    isLogin.value = undefined
+onMounted(() => {
+    isLogin.value = usersStore.isLogin
+})
+function leaveAccount(){
+    isLogin.value = useUser().logout()
 }
 </script>
 

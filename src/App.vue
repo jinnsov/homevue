@@ -1,16 +1,16 @@
 <script setup>
 import Menu from "./components/Menu.vue";
 import Cart from "./components/Cart/CartButton.vue";
-import Authorization from "./components/Admin/AuthorizationButton.vue";
 import UserButton from "@/components/User/UserButton.vue";
+import StoreTitle from "@/components/StoreTitle.vue";
 </script>
 
 <template>
     <div class="page">
-        <authorization></authorization>
+<!--        <authorization></authorization>-->
         <user-button></user-button>
         <cart></cart>
-        <Menu class="menu"></Menu>
+        <StoreTitle class="menu"></StoreTitle>
         <router-view></router-view>
     </div>
 </template>

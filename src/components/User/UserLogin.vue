@@ -1,40 +1,58 @@
 <template>
-    <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
-        <div class="button__group">
-            <p>Авторизация</p>
-            <Field name="login" type="input" style="'input'" placeholder="login"/>
-            <Field name="password" type="input" style="'input'" placeholder="password"/>
-        </div>
-        <div class="add-card">
-            <button id="login" type="submit" class="button__add">Добавить</button>
-            <button type="reset" class="button__add">Очистить</button>
-        </div>
-        <div v-for="item in schema">
-            <ErrorMessage  :name="item.name" />
-        </div>
-        <Loading :is-posting="isPosting"></Loading>
-    </Form>
+    <div v-if="isSubmit">
+        <h2>Выполнен вход в аккаунт</h2>
+        <router-link class="button__add" id="cart" :to="{name : 'cards'}">Ok</router-link>
+    </div>
+    <div v-else>
+        <Form :validation-schema="schema" @submit="onSubmit" v-slot="{ values }">
+            <div class="button__group">
+                <h2>Авторизация</h2>
+                <Field name="login" type="input" style="'input'" placeholder="login" v-model="login" />
+                <Field name="password" type="input" style="'input'" placeholder="password"/>
+            </div>
+            <div class="add-card">
+                <button id="login" type="submit" class="button__add">Добавить</button>
+                <button type="reset" class="button__add">Очистить</button>
+            </div>
+            <div v-for="item in schema">
+                <ErrorMessage  :name="item.name" />
+            </div>
+            <Loading :is-posting="isPosting"></Loading>
+        </Form>
+    </div>
+
 </template>
 
 <script setup>
 import   {useUser} from '@/stores/userStore.js'
 const store = useUser()
 import {Form, Field, ErrorMessage} from "vee-validate"
-import {ref, onMounted} from "vue";
+import {ref} from "vue";
 import {axiosPost} from "@/utils/AxiosPost.js";
 import Loading from "../Loading.vue";
 const isPosting = ref(false)
+const isSubmit = ref(false)
+const isFoundLogin = ref(false)
+const login = ref(store.getUserLogin)
 const message = ref('')
 const schema = {
     login: (value) => {
+        isFoundLogin.value = false
         if (value && value.trim().length) {
-            return true;
+            if ( useUser().getUserLogin !== value){
+                return 'Неправильное имя пользователя'
+            }
+            isFoundLogin.value = true
+            return true
         }
         return 'Не заполнено поле "Логин"';
     },
     password: (value) => {
         if (value && value.trim().length) {
-            return true;
+            if ( useUser().getUserPassword !== value && isFoundLogin.value === true){
+                return 'Пароль не верный!'
+            }
+            return true
         }
         return 'Не заполнено поле "Пароль"';
     },
@@ -43,26 +61,9 @@ const schema = {
 async function onSubmit(values) {
     isPosting.value = true
     message.value = (await axiosPost(values)).data
-    localStorage.setItem('userLogin', values.login)
-    //store.setUserLogin(values.login)
+    store.authorize()
+    isSubmit.value = true
     isPosting.value = false
-    window.location.replace("/")
-}
-
-const localStorageValue = ref('')
-
-onMounted(() => {
-    showLocalStorageContent()
-})
-
-const showLocalStorageContent = () => {
-    localStorageValue.value = localStorage.getItem('userLogin')
-}
-
-const removeLocalStorageContent = () => {
-    localStorage.removeItem('userLogin')
-    localStorageValue.value = undefined
-    store.setLogin('')
 }
 </script>
 

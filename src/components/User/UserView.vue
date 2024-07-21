@@ -1,6 +1,6 @@
 <template>
-  <h1>UserView</h1>
         <div class="button__group">
+            <h2>Персональные данные</h2>
             <div class="button__group">
                 <p>ФИО</p>
                 <p>{{currentUser?.last}}</p>
@@ -21,8 +21,7 @@
                 <p>{{currentUser?.password}}</p>
             </div>
             <div class="add-card">
-                <button type="submit" class="button__add">Добавить</button>
-                <button type="reset" class="button__add">Очистить</button>
+                <router-link class="button__add" id="cart" :to="{name : 'user'}">Ok</router-link>
             </div>
         </div>
 
