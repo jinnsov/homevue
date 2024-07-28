@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="lesson7a stage 5">
-      <change afterPath="$PROJECT_DIR$/src/components/StoreTitle.vue" afterDir="false" />
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="lesson7a stage 6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User/UserForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/UserForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/UserButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/LoginButton.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,14 +204,7 @@
       <workItem from="1720983239907" duration="1053000" />
       <workItem from="1721562093926" duration="18279000" />
       <workItem from="1721647689892" duration="2182000" />
-      <workItem from="1722155672751" duration="25061000" />
-    </task>
-    <task id="LOCAL-00016" summary="Сдеалал макет Меню и формы w2">
-      <created>1716802614949</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1716802614949</updated>
+      <workItem from="1722155672751" duration="26824000" />
     </task>
     <task id="LOCAL-00017" summary="Сделал рабочюю версию меню с формами (поиск, карточки...)">
       <created>1716806504023</created>
@@ -551,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722179345789</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="lesson7a stage 6">
+      <created>1722186653978</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1722186653978</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +567,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Сделал рабочюю версию меню с формами (поиск, карточки...)" />
     <MESSAGE value="Добавил кнопки &quot;Добавить&quot; и &quot;Очистить&quot;" />
     <MESSAGE value="Погдотовка формы Адрес к валидации (vee-validate)" />
     <MESSAGE value="Частичто валидацию сделал" />
@@ -594,6 +591,7 @@
     <MESSAGE value="lesson7a stage 3" />
     <MESSAGE value="lesson7a stage 4" />
     <MESSAGE value="lesson7a stage 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson7a stage 5" />
+    <MESSAGE value="lesson7a stage 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson7a stage 6" />
   </component>
 </project>
