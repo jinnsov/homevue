@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="Рефакторинг">
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="lesson6-vitest 1">
+      <change afterPath="$PROJECT_DIR$/src/specs/AuthorizationForm.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/specs/AxiosPost.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/specs/CartButton.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/specs/LocalGoods.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/specs/Search.spec.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/AuthorizationButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AuthorizationButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/AuthorizationForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AuthorizationForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Client/ClientPerson.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/ClientPerson.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart/CartButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/CartButton.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/AxiosPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/AxiosPost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/specs/Card.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/specs/Card.spec.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,28 +69,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;lesson6-vitest&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.15.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.15.0&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Dev/vue/homevue/src/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "lesson6-vitest",
+    "ignore.virus.scanning.warn.message": "true",
+    "ignore_missing_gitignore": "true",
+    "javascript.nodejs.core.library.configured.version": "18.15.0",
+    "javascript.nodejs.core.library.typings.version": "18.15.0",
+    "last_opened_file_path": "D:/Dev/vue/homevue/src/specs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dev\vue\homevue\src\specs" />
       <recent name="D:\Dev\vue\homevue\src\images" />
       <recent name="D:\Dev\vue\homevue\src" />
       <recent name="D:\Dev\vue\homevue\src\components" />
@@ -106,40 +105,69 @@
       <recent name="D:\Dev\vue\homevue\src\utils" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
-    <configuration name="CartButton object" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Vitest.Card object. Расчет суммы в корзине, с изменениями количества товара ">
+    <configuration name="Card object" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/specs/CartButton.spec.js" />
+      <test-file value="$PROJECT_DIR$/src/specs/Card.spec.js" />
       <test-names>
-        <test-name value="CartButton object" />
+        <test-name value="Card object" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="CartButton object.imports without error" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+    <configuration name="Card object. Расчет суммы в корзине, с изменениями количества товара " type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/specs/CartButton.spec.js" />
+      <test-file value="$PROJECT_DIR$/src/specs/Card.spec.js" />
       <test-names>
-        <test-name value="CartButton object" />
+        <test-name value="Card object" />
+        <test-name value=" Расчет суммы в корзине, с изменениями количества товара " />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Card object. pinia function " type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/specs/Card.spec.js" />
+      <test-names>
+        <test-name value="Card object" />
+        <test-name value=" pinia function " />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Card object.imports without error" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/specs/Card.spec.js" />
+      <test-names>
+        <test-name value="Card object" />
         <test-name value="imports without error" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="test" />
-      </scripts>
+    <configuration name="Pinia object.imports without error (1)" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$" />
       <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/specs/PiniaFunc.spec.js" />
+      <test-names>
+        <test-name value="Pinia object" />
+        <test-name value="imports without error" />
+      </test-names>
       <method v="2" />
     </configuration>
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
@@ -154,15 +182,19 @@
     </configuration>
     <list>
       <item itemvalue="npm.dev" />
-      <item itemvalue="npm.Test" />
-      <item itemvalue="Vitest.CartButton object" />
-      <item itemvalue="Vitest.CartButton object.imports without error" />
+      <item itemvalue="Vitest.Card object" />
+      <item itemvalue="Vitest.Card object. pinia function " />
+      <item itemvalue="Vitest.Card object. Расчет суммы в корзине, с изменениями количества товара " />
+      <item itemvalue="Vitest.Card object.imports without error" />
+      <item itemvalue="Vitest.Pinia object.imports without error (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Vitest.CartButton object" />
-        <item itemvalue="Vitest.CartButton object.imports without error" />
-        <item itemvalue="npm.Test" />
+        <item itemvalue="Vitest.Card object. Расчет суммы в корзине, с изменениями количества товара " />
+        <item itemvalue="Vitest.Card object. pinia function " />
+        <item itemvalue="Vitest.Card object" />
+        <item itemvalue="Vitest.Pinia object.imports without error (1)" />
+        <item itemvalue="Vitest.Card object.imports without error" />
       </list>
     </recent_temporary>
   </component>
@@ -523,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718046594908</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="lesson6-vitest 1">
+      <created>1722784820086</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1722784820086</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +580,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="реализовал v-for" />
     <MESSAGE value="попытка добавить props" />
     <MESSAGE value="реализвал пропс в app.vue" />
     <MESSAGE value="App.vue разгрузил. Вывод товара в сетку засунул" />
@@ -566,7 +604,8 @@
     <MESSAGE value="Поправил логику авторизации" />
     <MESSAGE value="Рефакторинг + редирект в /add после авторизации" />
     <MESSAGE value="Рефакторинг" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг" />
+    <MESSAGE value="lesson6-vitest 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson6-vitest 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

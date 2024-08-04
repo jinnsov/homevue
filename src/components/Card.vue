@@ -34,47 +34,6 @@ function select (item) {
     store.selectCard(item)
     //$router.push({ path: '/prod' })
 }
-
-
-/*const data = defineProps({
-    data: {
-        type: Object,
-        default() {
-            return {
-                id: 0,
-                title: 'заголовок',
-                price: 500,
-                description: 'пусто',
-                category:'нет',
-                image:'нет',
-                rating: {
-                    rate:0,
-                    count:0
-                }
-            }
-        }
-    },
-});*/
-/*defineProps({
-    item: {
-        type: Object,
-        default() {
-            return {
-                id: Number,
-                title: String,
-                price: Number,
-                description: String,
-                category: String,
-                image: String,
-                type: Object,
-                rating: {
-                    rate: 0,
-                    count: 0
-                }
-            }
-        }
-    }
-})*/
 defineProps(
     {
         item: {
