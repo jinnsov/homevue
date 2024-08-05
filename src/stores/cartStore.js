@@ -15,8 +15,7 @@ export const useMyStore = defineStore('counter' ,{
                             rate:0.00,
                             count:0
                         }
-                    },
-            login: undefined
+                    }
                 }
     },
     actions: {
@@ -39,7 +38,6 @@ export const useMyStore = defineStore('counter' ,{
       },
       removeAllCard() { this.cards.length = 0},
       selectCard(card) { this.card = card},
-      setLogin(login)  {this.login = login}
     },
     getters: {
         cardsCount: (state) => state.cards.length,

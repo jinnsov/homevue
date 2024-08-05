@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="lesson7a stage 6">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d0cc0b5f-485e-492a-989f-168f2a1c506a" name="Changes" comment="lesson6-vitest 3">
+      <change beforePath="$PROJECT_DIR$/src/components/StoreTitle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StoreTitle.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +16,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -204,20 +204,6 @@
       <workItem from="1721647689892" duration="2182000" />
       <workItem from="1722155672751" duration="26824000" />
       <workItem from="1722758430168" duration="1585000" />
-    </task>
-    <task id="LOCAL-00017" summary="Сделал рабочюю версию меню с формами (поиск, карточки...)">
-      <created>1716806504023</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1716806504023</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Добавил кнопки &quot;Добавить&quot; и &quot;Очистить&quot;">
-      <created>1716818693644</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1716818693644</updated>
     </task>
     <task id="LOCAL-00019" summary="Погдотовка формы Адрес к валидации (vee-validate)">
       <created>1716832533449</created>
@@ -548,7 +534,21 @@
       <option name="project" value="LOCAL" />
       <updated>1722186653978</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="lesson6-vitest 3">
+      <created>1722873700720</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1722873700721</updated>
+    </task>
+    <task id="LOCAL-00067" summary="lesson6-vitest 3">
+      <created>1722873714600</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1722873714600</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +611,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавил кнопки &quot;Добавить&quot; и &quot;Очистить&quot;" />
     <MESSAGE value="Погдотовка формы Адрес к валидации (vee-validate)" />
     <MESSAGE value="Частичто валидацию сделал" />
     <MESSAGE value="&#10;&#10;&#10;&#10;Сделал: &#10;- валидацию (лайтовую)&#10;- оправку axios post запросов" />
@@ -636,6 +635,7 @@
     <MESSAGE value="lesson7a stage 4" />
     <MESSAGE value="lesson7a stage 5" />
     <MESSAGE value="lesson7a stage 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson7a stage 6" />
+    <MESSAGE value="lesson6-vitest 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson6-vitest 3" />
   </component>
 </project>

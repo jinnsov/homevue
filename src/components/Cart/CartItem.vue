@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import {useMyStore} from '../../stores/productStore.js'
+import {useMyStore} from '@/stores/cartStore.js'
 const counter = useMyStore()
 
 function deleteItem (item) {

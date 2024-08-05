@@ -22,7 +22,7 @@
 
 <script setup>
 import CartItem from "./CartItem.vue";
-import {useMyStore} from '@/stores/productStore.js'
+import {useMyStore} from '@/stores/cartStore.js'
 const counter = useMyStore()
 </script>
 

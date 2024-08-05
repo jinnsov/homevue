@@ -4,7 +4,6 @@ import ClientPerson from "@/components/Client/ClientPerson.vue";
 import ClientAddress from "@/components/Client/ClientAddress.vue";
 import CartList from "@/components/Cart/CartList.vue";
 import Product from "@/components/Products/Product.vue";
-import AuthorizationForm from "@/components/Admin/AuthorizationForm.vue";
 import UserForm from "@/components/User/UserForm.vue";
 import UserAdd from "@/components/User/UserAdd.vue";
 import UserView from "@/components/User/UserView.vue";
@@ -18,14 +17,6 @@ const router = createRouter({
             name: 'cards',
             component: GreedCards,
             alias: '/home'
-        },
-        {
-            path: '/add',
-            name: 'product',
-            // route level code-splitting
-            // this generates a separate chunk (About.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import('@/components/Admin/AddProduct.vue'),
         },
         {
             path: '/contacts',
@@ -50,12 +41,6 @@ const router = createRouter({
             name: 'prod',
             component: Product,
             alias: '/p'
-        },
-        {
-            path: '/authorization',
-            name: 'authorization',
-            component: AuthorizationForm,
-            alias: '/login'
         },
         {
             path: '/user/',

@@ -15,7 +15,8 @@ export const useUser = defineStore('person' ,{
             second : '',
             street : '',
         },
-        isAuthorized: { value: false}
+        isAuthorized: { value: false},
+        login: undefined
         }
     },
     actions: {
@@ -30,7 +31,8 @@ export const useUser = defineStore('person' ,{
         authorize(){
             this.isAuthorized.value = true
             console.log('isAuthorized: ', this.isAuthorized.value)
-        }
+        },
+        setLogin(login)  {this.login = login}
     },
     getters: {
         getCurrentUser: (state) => {
